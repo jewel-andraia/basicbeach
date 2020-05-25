@@ -1,0 +1,26 @@
+{
+  "name": "basicbeach",
+  "version": "0.0.1",
+  "description": "Designin earrings using procedural generation and 3D modeling tools such as Tracery and OpenSCAD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andytuba/basicbeach.git"
+  },
+  "keywords": [
+    "scad",
+    "openscad",
+    "jewelry",
+    "earrings",
+    "tracery"
+  ],
+  "author": "andytuba <andytuba@andytuba.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andytuba/basicbeach/issues"
+  },
+  "homepage": "https://github.com/andytuba/basicbeach#readme"
+}
