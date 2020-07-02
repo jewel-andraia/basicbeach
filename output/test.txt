@@ -1,1 +1,7 @@
-I am an angry iguana.
+{ seed: 540.1834525090939,
+  grammar: 't21-tracery-readme',
+  nodescad:
+   { binaryPath: '/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD',
+     inputFile: './src/models/example.scad' },
+  text: 'I am a sad fox.' }
+null

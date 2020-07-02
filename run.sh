@@ -1,3 +1,3 @@
 #!/bin/bash
 
-node ./src/index.js > ./output/test.txt
+node ./src/index.js | tee ./output/test.txt
