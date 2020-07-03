@@ -35,41 +35,39 @@ const text = grammar.flatten('#origin#');
 const stlOptions = {
 	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
 	...config.nodescad,
-	/*
 	variables: {
 		inputText: `"${text}"`,
 		...config.variables,
 	},
-	*/
 	format: 'stl',
 	outputFile: `"${outputPath}/stl - ${outputBasename}.stl"`,
 };
 const pngOptions = {
 	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
 	...config.nodescad,
-	/*
 	variables: {
 		inputText: `"${text}"`,
 		...config.variables,
 	},
-	*/
 	format: 'png',
 	outputFile: `"${outputPath}/png - ${outputBasename}.png"`,
 };
 
 nodescad.render(stlOptions, function (err, result) {
-	if (err || result.stderr) {
+	if (result.stderr) {
 		console.error({ step: 'stlOptions', stlOptions });
-		throw err || result.stderr;
+		throw result.stderr;
 	}
 });
 
 nodescad.render(pngOptions, function (err, result) {
-	console.error({ step: 'pngOptions', pngOptions });
-	if (err || result.stderr) {
-		throw err || result.stderr;
+	if (result.stderr) {
+		console.error({ step: 'pngOptions', pngOptions });
+		throw result.stderr;
 	}
 });
+
+// TODO: await all nodescad render 
 
 /* Ding, fries are done. */
 console.info({
