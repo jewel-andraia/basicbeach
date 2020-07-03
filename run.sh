@@ -1,3 +1,6 @@
 #!/bin/bash
 
-node ./src/index.js | tee ./output/test.txt
+res=$(node ./src/index.js)
+echo $res
+echo $res > ./output/test.txt
+ls -la "$res"

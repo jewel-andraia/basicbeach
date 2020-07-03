@@ -36,7 +36,7 @@ const stlOptions = {
 	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
 	...config.nodescad,
 	variables: {
-		inputText: `"${text}"`,
+		inputText: text,
 		...config.variables,
 	},
 	format: 'stl',
@@ -46,31 +46,36 @@ const pngOptions = {
 	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
 	...config.nodescad,
 	variables: {
-		inputText: `"${text}"`,
+		inputText: text,
 		...config.variables,
 	},
 	format: 'png',
 	outputFile: `"${outputPath}/png - ${outputBasename}.png"`,
 };
 
-nodescad.render(stlOptions, function (err, result) {
-	if (result.stderr) {
-		console.error({ step: 'stlOptions', stlOptions });
-		throw result.stderr;
+nodescad.render(stlOptions, function (error, result) {
+	const options = stlOptions;
+	if (error || result && result.error) {
+		console.error({ 
+			options,
+			error,
+			result,
+		});
 	}
 });
 
-nodescad.render(pngOptions, function (err, result) {
-	if (result.stderr) {
-		console.error({ step: 'pngOptions', pngOptions });
-		throw result.stderr;
+nodescad.render(pngOptions, function (error, result) {
+	const options = pngOptions;
+	if (error || result && result.error) {
+		console.error({ 
+			options,
+			error,
+			result,
+		});
 	}
 });
 
 // TODO: await all nodescad render 
 
 /* Ding, fries are done. */
-console.info({
-	config,
-	outputPath,
-});
+console.log(outputPath);
