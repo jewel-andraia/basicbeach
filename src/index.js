@@ -61,7 +61,14 @@ fs.writeFileSync(`${outputPath}/config - ${outputBasename}.json`, JSON.stringify
 /* Generate text */
 seedrandom(config.seed, { global: true });
 const grammarSource = require(`./grammar/${config.grammar}.json`);
-const grammarPreprocessor = require(`./grammar/${config.grammar}.js`) || (x => x);
+let grammarPreprocessor = x => x;
+try {
+	grammarPreprocessor = require(`./grammar/${config.grammar}.js`);
+} catch (e) {
+	if (e.code !== 'MODULE_NOT_FOUND') {
+		throw e;
+	}
+}
 
 const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
 grammar.addModifiers(tracery.baseEngModifiers);
