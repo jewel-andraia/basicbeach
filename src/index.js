@@ -25,8 +25,15 @@ const argv = yargs.options({
 		describe: 'path to openscad scripts',
 		default: 'src/models',
 	},
+	stl: {
+		describe: 'render the STL file',
+		default: false,
+	},
+	png: {
+		describe: 'render the png file',
+		default: true,
+	},
 }).argv;
-
 const config = {
 	...argv,
 	nodescad: {
@@ -80,7 +87,7 @@ const pngOptions = {
 	outputFile: `"${outputPath}/png - ${outputBasename}.png"`,
 };
 
-false && // TODO: delete 
+if (config.renderStl)
 nodescad.render(stlOptions, function (error, result) {
 	const options = stlOptions;
 	if (error || result && result.error) {
@@ -92,6 +99,7 @@ nodescad.render(stlOptions, function (error, result) {
 	}
 });
 
+if (config.renderPng)
 nodescad.render(pngOptions, function (error, result) {
 	const options = pngOptions;
 	if (error || result && result.error) {
