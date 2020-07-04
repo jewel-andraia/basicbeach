@@ -60,7 +60,10 @@ fs.writeFileSync(`${outputPath}/config - ${outputBasename}.json`, JSON.stringify
 
 /* Generate text */
 seedrandom(config.seed, { global: true });
-const grammar = tracery.createGrammar(require(`./grammar/${config.grammar}.json`));
+const grammarSource = require(`./grammar/${config.grammar}.json`);
+const grammarPreprocessor = require(`./grammar/${config.grammar}.js`) || (x => x);
+
+const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
 grammar.addModifiers(tracery.baseEngModifiers);
 const text = grammar.flatten('#origin#');
 fs.writeFileSync(`${outputPath}/text - ${outputBasename}.txt`, text);
