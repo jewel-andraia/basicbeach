@@ -1,0 +1,23 @@
+{
+    "origin": "#[be:#be#]Be you.capitalizeAll#",
+    "Be you": [
+        "#be.capitalize# #adjective# #be.capitalize# #you#",
+        "#be.capitalize# #adjective# #be.capitalize# #adjective# #be.capitalize# #you#"
+    ],
+    "be": [
+        "Be",
+        "Act",
+        "believe"
+    ],
+    "adjective": [
+        "good",
+        "happy",
+        "positive",
+        "dour",
+        "sour"
+    ],
+    "you": [
+        "you",
+        "yourself"
+    ]
+}
