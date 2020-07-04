@@ -36,7 +36,6 @@ const config = {
 	variables: {
 	},
 };
-console.error(config);
 
 /* Calculated constants */
 const outputPath = `${process.cwd()}/output/${config.grammar}/${config.scad}/${config.seed}/${config.grammar} - ${config.scad} - ${config.seed} - ${Date.now()}`;
