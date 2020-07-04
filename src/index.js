@@ -19,7 +19,7 @@ const argv = yargs.options({
 	scad: {
 		alias: 'm',
 		describe: 'basename for openscad script',
-		default: 'example', // 'basicbeach',
+		default: 'words-in-a-box',
 	},
 	scadPath: {
 		describe: 'path to openscad scripts',
@@ -50,6 +50,8 @@ seedrandom(config.seed, { global: true });
 const grammar = tracery.createGrammar(require(`./grammar/${config.grammar}.json`));
 grammar.addModifiers(tracery.baseEngModifiers);
 const text = grammar.flatten('#origin#');
+fs.writeFileSync(`${outputPath}/text - ${outputBasename}.txt`, text);
+
 
 /* Render scad script + text into stl scad and png preview */ 
 const stlOptions = {
@@ -69,10 +71,16 @@ const pngOptions = {
 		inputText: text,
 		...config.variables,
 	},
+	imageSize: {
+		x: 1000,
+		y: 1000,
+	},
+	colorSchema: 'Starnight',
 	format: 'png',
 	outputFile: `"${outputPath}/png - ${outputBasename}.png"`,
 };
 
+false && // TODO: delete 
 nodescad.render(stlOptions, function (error, result) {
 	const options = stlOptions;
 	if (error || result && result.error) {
