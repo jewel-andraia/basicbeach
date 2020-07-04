@@ -88,12 +88,14 @@ const pngOptions = {
 		x: 1000,
 		y: 1000,
 	},
-	colorSchema: 'Starnight',
+	autoCenter: true,
+	projection: 'orthogonal',
+	colorSchema: 'Sunset',
 	format: 'png',
 	outputFile: `"${outputPath}/png - ${outputBasename}.png"`,
 };
 
-if (config.renderStl)
+if (config.stl)
 nodescad.render(stlOptions, function (error, result) {
 	const options = stlOptions;
 	if (error || result && result.error) {
@@ -105,7 +107,7 @@ nodescad.render(stlOptions, function (error, result) {
 	}
 });
 
-if (config.renderPng)
+if (config.png)
 nodescad.render(pngOptions, function (error, result) {
 	const options = pngOptions;
 	if (error || result && result.error) {
