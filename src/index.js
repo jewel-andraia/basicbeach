@@ -9,28 +9,34 @@ const argv = yargs.options({
 	seed: {
 		alias: 's',
 		describe: 'random seed for tracery',
+		type: 'number',
 		default: Math.floor(Math.random() * 1000),
 	},
 	grammar: {
 		alias: 'g',
 		describe: 'basename for tracery grammar',
+		type: 'string',
 		default: 't21-tracery-readme', // 'basicbeach',
 	},
 	scad: {
 		alias: 'm',
 		describe: 'basename for openscad script',
+		type: 'string',
 		default: 'words-in-a-box',
 	},
 	scadPath: {
 		describe: 'path to openscad scripts',
+		type: 'string',
 		default: 'src/models',
 	},
 	stl: {
 		describe: 'render the STL file',
+		type: 'boolean',
 		default: false,
 	},
 	png: {
 		describe: 'render the png file',
+		type: 'boolean',
 		default: true,
 	},
 }).argv;
