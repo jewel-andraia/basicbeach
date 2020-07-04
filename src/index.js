@@ -2,13 +2,33 @@ const tracery = require('tracery-grammar');
 const nodescad = require('nodescad');
 const seedrandom = require('seedrandom');
 const fs = require('fs');
+const yargs = require('yargs');
 
 /* Config */
+const argv = yargs.options({
+	seed: {
+		alias: 's',
+		describe: 'random seed for tracery',
+		default: Math.floor(Math.random() * 1000),
+	},
+	grammar: {
+		alias: 'g',
+		describe: 'basename for tracery grammar',
+		default: 't21-tracery-readme', // 'basicbeach',
+	},
+	scad: {
+		alias: 'm',
+		describe: 'basename for openscad script',
+		default: 'example', // 'basicbeach',
+	},
+	scadPath: {
+		describe: 'path to openscad scripts',
+		default: 'src/models',
+	},
+}).argv;
+
 const config = {
-	seed: Math.floor(Math.random() * 1000),
-	grammar: 't21-tracery-readme', // 'basicbeach',
-	model: 'example', // 'basicbeach',
-	modelPath: 'src/models',
+	...argv,
 	nodescad: {
 		binaryPath: '"/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD"',
 		render: true,
@@ -16,10 +36,11 @@ const config = {
 	variables: {
 	},
 };
+console.error(config);
 
 /* Calculated constants */
-const outputPath = `${process.cwd()}/output/${config.grammar}/${config.model}/${config.seed}/${config.grammar} - ${config.model} - ${config.seed} - ${Date.now()}`;
-const outputBasename = `${config.grammar} - ${config.model} - ${config.seed}`;
+const outputPath = `${process.cwd()}/output/${config.grammar}/${config.scad}/${config.seed}/${config.grammar} - ${config.scad} - ${config.seed} - ${Date.now()}`;
+const outputBasename = `${config.grammar} - ${config.scad} - ${config.seed}`;
 
 /* Prepare output files */
 fs.mkdirSync(outputPath, { recursive: true });
@@ -31,9 +52,9 @@ const grammar = tracery.createGrammar(require(`./grammar/${config.grammar}.json`
 grammar.addModifiers(tracery.baseEngModifiers);
 const text = grammar.flatten('#origin#');
 
-/* Render scad script + text into stl model and png preview */ 
+/* Render scad script + text into stl scad and png preview */ 
 const stlOptions = {
-	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
+	inputFile: `"${process.cwd()}/${config.scadPath}/${config.scad}.scad"`,
 	...config.nodescad,
 	variables: {
 		inputText: text,
@@ -43,7 +64,7 @@ const stlOptions = {
 	outputFile: `"${outputPath}/stl - ${outputBasename}.stl"`,
 };
 const pngOptions = {
-	inputFile: `"${process.cwd()}/${config.modelPath}/${config.model}.scad"`,
+	inputFile: `"${process.cwd()}/${config.scadPath}/${config.scad}.scad"`,
 	...config.nodescad,
 	variables: {
 		inputText: text,
