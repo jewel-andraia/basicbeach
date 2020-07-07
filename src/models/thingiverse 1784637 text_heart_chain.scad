@@ -121,7 +121,7 @@ module a_heart_with_rings_character(ch, heart_width, heart_thickness, spacing) {
     radius_for_heart = 0.5 * heart_width / (1 + cos(45));
 	difference() {
 		heart_with_rings(heart_width, heart_thickness, spacing);
-		translate([0, 0, heart_thickness / 2])
+		translate([0, 0, heart_thickness / 1.9])
 			linear_extrude(heart_thickness / 2) 
 				heart(radius_for_heart * 0.9, center = true);
 	}
