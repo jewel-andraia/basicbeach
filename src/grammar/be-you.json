@@ -1,9 +1,11 @@
 {
-    "origin": "#[be:#be#]Be you.capitalizeAll#",
+    "origin": "#[be:#be#][space:#space#][period:#period#]Be you.capitalizeAll#",
     "Be you": [
-        "#be.capitalize# #adjective# #be.capitalize# #you#",
-        "#be.capitalize# #adjective# #be.capitalize# #adjective# #be.capitalize# #you#"
+        "#be.capitalize##space##adjective##period##be.capitalize##space##[space]you#",
+        "#be.capitalize##space##adjective##period##be.capitalize##space##adjective##period##be.capitalize##space##you#"
     ],
+    "space": [""," ", "*", "-", "·"],
+    "period": [",",".","·","-"],
     "be": [
         "Be",
         "Act",
@@ -18,6 +20,15 @@
     ],
     "you": [
         "you",
-        "yourself"
-    ]
+        "yourself",
+        "#creature.a.replace(' ', space).#",
+        "#proper noun#"
+    ],
+    "proper noun": [
+        "Batman"
+    ],
+    "creature": [
+        "#corpora-animals-common#"
+    ],
+    "corpora-animals-common": []
 }

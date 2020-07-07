@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/andytuba/basicbeach#readme",
   "dependencies": {
+    "corpora-project": "^0.2.0",
     "es6-promisify": "^6.1.1",
     "nodescad": "git+https://git@github.com/andytuba/nodescad.git#fix-D-quoting",
     "seedrandom": "^3.0.5",
