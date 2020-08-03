@@ -2,7 +2,7 @@ inputText = "Live Laugh Love";
 textHeight = 2.00;
 textThickness = 0.30;
 
-wallThickness = 0.20;
+wallThickness = 0.50;
 wallHeight = textThickness * 2.05;
 floorThickness = wallheight - textThickness;
 radius = len(inputText);
@@ -23,6 +23,7 @@ union() {
         }
     }
 
+    translate([0, 0, floorThickness])
     linear_extrude(textThickness)
         text( inputText,
             font = "Arial:style=Bold",
