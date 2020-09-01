@@ -1,0 +1,16 @@
+{
+	"origin": ["#maybe titled name#", "#maybe titled name#", "#maybe titled name#", "#maybe titled name#, The #occupation# Cat", "#maybe titled name#", "#maybe titled name# and #maybe titled name#", "#maybe titled name# (a #occupation# Cat)", "#maybe titled name#, better known as #maybe titled name#", "#maybe titled name#, sometimes known as #maybe titled name#"],
+        "maybe titled name": ["#name#",  "#name#",  "#name#",  "#name#", "#title# #name#", "#title# #name#", "The #title# #name#", "The One and Only #name#"],
+        "title": ["Old", "Gnarled", "Sweet", "Lil", "Tiny", "Singular", "Indubitable", "Great", "Grand", "Mr.", "Mx.", "Ms", "Mrs", "Mister", "Missus", "Master"],
+        "name": ["#name prefix##name suffix#", "#name prefix##name suffix#", "#name prefix##name infix##name suffix#", "#name prefix##name suffix##name suffix#"],
+        "name prefix": [ "Misto", "Gumbie", "Jenny", "Growl", "Rum Tum", "Mungo", "Rumple", "Deutero", "Rumpus", "Mac", "Bustopher", "Skimble", "Hoopla", "Doopla", "Hoobly", "Bomba", "Ad", "Adme", "Al", "Alonz", "Car", "Carbuck", "Cass", "Corico", "Cori", "Tan", "Tanto", "Dem", "Exo", "Exoti", "George", "Grizza", "Jemi", "Jemima", "Munk", "Munku", "Munkstr", "Silla", "Tumbl" ],
+       "name infix": ["", "", "", "", "any", "ca", "ba", "da", "de", "dede", "deda", "lori", "fori", "nori", "mi", "ni", "me", "mer", "fler", "si", "ti", "#name infix##name infix#"],
+        "name suffix": ["ffles", "dots", "tiger", "tigger", "tugger", " Tugger", "nomy", "avity", " Jones", "shanks", "janks", " Morgan", "laramba", "labamba", "pumpump", "pumdiddly", "diddly", "dab", "dap", "lorems", "larums", "lurina", "belle", "bone", "jerry", "wonks", "tonks", "leeks", "jangle", "metus", "tus", "onzo", " Bailey", "bucketty", "etty", "andra", "copat", "pat", "tomile", "mile", "eter", "cetera", "etera", "ca", "bella", "mima", "ma", "ustrup", "strap", "ustrap", "bub", "brutus", "utus", "lope", "milious", "fish"],
+       "occupation": ["Railway", "Glamour", "Knockabout", "Taco", "Duelist", "Witch's", "Rockabilly", "Flopper", "Flapper", "Jazz", "Hep", "County", "Country", "Bohemian", "Prussian", "Surrealist", "Cubist", "Knicknack", "Edwardian", "Gregorian", "Victorian", "Imperial", "Paddywhack", "Cartographer", "Orthographer", "Verisimilious", "Detective", "Rumpus", "Raffish"]
+}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{
+     "origin": ["#salutation#, #salutation#.", "#announcement#", "#salutation#", "#salutation#, #announcement#", "#salutation# in #now#"],
+ "school": [ "#grade# #education#", "#education#", "#grade#"],
+   "grade": ["undergraduate", "preschool", "kindergarten", "middle school", "grade school", "college"],
+   "education": [ "classes", "coursework", "education", "seminars"],
+	"salutation": ["during this time of #COVID#", "we hope #to find# #you# #well#", "#we# share your #concerns#", "we share your #concerns# about #COVID#", "as you know", "as I'm sure you are aware", "#we# hope this #message# #finds# #you# #well#", "I know #you# #are struggling", "as we navigate the #COVID#", "we're thinking about #you#", "our #message# to you#", "our response to #COVID#", "leadership #message# on #COVID#", "a #message# from the CEO", "supporting #you#", "our commitments to #you#"],
+    "we": ["I", "we", "your #leadership#"],
+   "leadership": ["leadership", "CEO", "your representative", "president", "dean", "bursar"],
+     "announcement": "#COVID# #meeting# #time#",
+	"COVID":  ["pandemic", "COVID-19", "coronavirus", "novel coronavirus", "'rona", "rona", "el virus", "covid", "SARS-CoV-19", "the #COVID#", "#school#"],
+     "message": ["message", "missive", "note", "communication", "communique", "memo", "letter", "email", "e-mail", "eMail", "tweet", "update"],
+     "meeting": ["discussion", "town hall", "meeting", "briefing", "press release", "#message#"],
+    "time": ["tonight", "TONIGHT", "tomorrow night", "at 4 pm", "at 5pm", "in half an hour"],
+     "now": ["#COVID#", "the new normal", "unfamiliar terrain", "transitioning to #online#", "these #trying# #times#"],
+     "trying": ["trying", "extraordinary"],
+     "times": ["times", "struggles", "#times# of such #concerns#"],
+      "online": ["online", "virtual", "streaming", "social distancing", "the #online# landscape"],
+    "to find": ["to find", "to meet"],
+    "finds": ["finds", "meets", "encounters"],
+     "concerns": ["concerns", "worries", "fears", "uncertainty"] ,
+     "you": ["you", "you", "you all", "you and #your family#", "the student body", "#school#"],
+     "your family": ["your family", "yours", "those whom you love", "the #school#"],
+     "well": ["well", "healthy", "safe", "all #well#", "secure", "snuggled up", "in good health", "secure", "rich", "#well# and #well#", "#well# & #well#"],
+     "are struggling": ["are struggling", "are up against it", "are facing the #enemy#", "are fighting the #invisible# #enemy#"],
+    "invisible":  ["invisible", "silent", "creeping", "airborne", "#invisible#, #invisible#"],
+ "enemy": ["enemy", "terror", "threat", "odds", "#COVID#"]
+}
+

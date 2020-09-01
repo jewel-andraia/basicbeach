@@ -1,0 +1,16 @@
+{
+	"origin": ["Eat at #Taqueria#!", "Come on down to #Taqueria#!", "Today's special at #Taqueria# is #meal#!", "#origin# #origin#"],
+        "Taqueria": ["#Fligabertos#", "La Taqueria #Fligabertos#", "#Los Hermanos# #Fligabertos#", "#Tacos# #Grande#", "#Grande# #Tacos#"],
+       "Los Hermanos": ["Los Hermanos", "Los Padres", "Las Hermanas", "Los Hermanitos", "Los Quatros", "Los Dos" , "Los Tres", "Taquero"], 
+        "Fligabertos": ["#Fliga#bertos", "#Fliga#berto's", "Lola's"],
+       "Fliga": ["Gil", "Fliga", "Jil", "Gual", "Rigi"],
+"Tacos": ["Tacos", "Taquería"],
+   "Grande": ["Grande",  "el Cabron", "Pequeño", "Libertad", "Picante", "Oaxaca", "Serrano"],
+    "meal": ["#ingredient# #format#", "#ingredient# #format# con #ingredient#"],
+     "ingredient": ["carne asada", "fish", "birria", "tripe", "pollo asado", "supreme","mar y tierra", "adobada", "machaca", "chorizo", "bean and cheese", "papas", "chile relleno", "queso", "California", "albóndigas", "menudo", "huevos con jamón", "breakfast", "lengua", "milanesa", "chimichanga", "Baja grill", "chipotle", "a la diabla", "carnitas", "chicharrón", "beef", "chile verde", "mole", "camarones", "shrimp", "ceviche", "frijoles"],
+     "format": ["tacos", "burrito", "tamales", "fries", "quesadillas", "sopa", "enchiladas", "taquitos", "fajitas", "tortas", "tostadas", "rolled tacos", "chilaquiles", "nachos", "pozole"]
+}
+
+
+
+

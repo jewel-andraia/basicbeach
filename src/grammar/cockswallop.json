@@ -1,0 +1,44 @@
+{
+ "origin":  [ "Buy #collective noun#, #price#", "Get yer #shitgibbon#s here, #price#!", "It smells like #shitgibbon# in here.", "What's that #shitgibbon# doing in the corner?", "How much is that #shitgibbon# in the window? #price#.", "Seems like the #shitgibbons# have come to town.", "We're 59 miles from #Vegas# and I see a #shitgibbon# on the side of the road.", "This is #shitgibbon# country.", "Mind your #relation#, there's #shitgibbons# about."],
+
+"reply": ["#mandate#", "#insult#", "#mandate# #insult#", "#retort#", "#retort# #insult#", "#retort# #mandate#"], 
+
+"insult":[ "You couldn't tell a #shitgibbon# from a #shitgibbon#.", "Your #relation# is a #shitgibbon#.", "Your #relation# was a #shitgibbon# and you'll be one too."],
+
+"retort": [ "What did you call me, you #shitgibbon#?", "What sort of #shitgibbon# are you talking about?", "Get back to your #shitgibbon# friends."],
+
+"collective noun": [ "a barrel of #shitgibbons#", "all the #shitgibbons# in the world", "a bundle of #shitgibbon#", "a bundle of #adjective# #shitgibbon#", "a boxful of #shitgibbon#", "a boxful of #adjective# #shitgibbon#", "a puddle of #shitgibbon#", "a puddle of #adjective# #shitgibbon#", "all the #shitgibbon# you can fit in a bag"], 
+
+"Vegas": ["Vegas", "Baltimore", "Paris", "London", "Salisbury", "Miami", "Agloe", "Frisco", "Portland", "your #relation#'s place"
+],
+
+"mandate": [ 
+"#Go away#, you #shitgibbon#.",
+"#Consume# #adjective# #shitgibbon#.",
+ "Take your #shitgibbon# #relation# and #go away#."
+],
+"Consume": ["Suck on", "Eat up", "Bite down hard on"],
+
+"adjective": ["a", "the world's chewiest", "a fetid", "a chewy", "a slimy", "a rotting", "a fresh", "a fresh-picked" ],
+"Go away": [ "Sod off", "Shove off", "Go away", "Go on, get", "Bugger off"],
+"go away": ["shoo", "get", "slag off", "go away", "bugger off"],
+"relation": [ "mother", "father", "boyfriend", "girlfriend", "mistress", "consort", "boss", "auntie", "uncle", "grandpa", "grandma"], 
+
+"price": [ "#amount# a #unit#", "free for the taking", "best offer", "buyer must pick up", "not even #amount#", "buy two get one free" ],
+
+"amount":["69 cents", "tree fiddy", "song and a dance for", "nine ninety nine ninety"],
+
+"unit": [ "pound", "sniff", "lick", "stick", "hunk", "box", "bag", "baggie"],
+
+"shitgibbon": "#shit##gibbon#",
+"shitgibbons": "#shit##gibbon#s",
+
+"shit": [ "shit", "cod", "poop", "corn", "fish", "trout", "arse", "cock", "wank", "butt", "fuck", "dung", "gash", "ass", "tit", "schlong", "trash", "nob", "knob", "wank", "fart", "shite", "dill", "door", "jack", "jane", "stove" ],
+
+"gibbon": [
+"gibbon", "basket", "panda", "puffin", "falcon", "vulture", "kestrel", "pigeon", "trollop", "flower", "geyser", "topple", "pickler", "mustard", "whopper", "baiter", "waddle", "waddler", "skimmer", "swoggle", "swoggler", "waffle", "biscuit", "wagon", "monger", "swiper", "sucker", "sniggler", "pheasant", "sitter", "tickler", "lemon", "womble", "wimble", "dingus", "muppet", "weasel", "jangle", "bucket", "knuckle", "trifle", "goblin", "kobold", "sniffer", "holster", "pusher", "barrel", "canoe"] 
+}
+
+
+
+
