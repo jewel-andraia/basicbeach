@@ -33,7 +33,8 @@ const server = http.createServer((req, res) => {
 						}
 
 						h1 {
-							font-family: fantasy;
+							font-family: sans-serif;
+							font-style: oblique;
 							font-size: 3vw;
 							text-align: right;
 							text-transform: capitalize;
@@ -46,6 +47,8 @@ const server = http.createServer((req, res) => {
 						pre {
 							font-family: serif;	
 							font-size: 3vw;
+							width: 80%;
+							white-space: pre-wrap;
 						}
 
 					</style>
