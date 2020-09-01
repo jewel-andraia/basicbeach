@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
 					</style>
 				</head>
 				<body>
-					<h1><a href=".">${deslug(grammar)}</a> <a href="?seed=${traceryOutput.config.seed}">&#x1f517;</a></h1>
+					<h1><a href="?">${deslug(grammar)}</a> <a href="?seed=${traceryOutput.config.seed}">&#x1f517;</a></h1>
 					<pre>${traceryOutput.output.text}</pre>
 					<footer>by <a href="https://twitter.com/andytuba">@andytuba</a></footer>
 				</body>
