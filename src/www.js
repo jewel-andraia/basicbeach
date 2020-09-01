@@ -15,12 +15,47 @@ const server = http.createServer((req, res) => {
 		const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
 		const grammar = path && path.groups.grammar || 't21-tracery-readme';
 
-		console.log({ reqUrl, grammar });
-		let traceryOutput;
+		console.debug({ reqUrl, grammar });
+		let html = '<html>honk';
 		try {
-			traceryOutput = generateText({
+			const traceryOutput = generateText({
 			      grammar,
 			});
+			html = `
+			<html>
+				<head>
+					<title>/tracery/${grammar}</title>
+					<style>
+						body {
+							background-color: cornflowerblue;
+							color: antiquewhite;
+							padding: 3%;
+						}
+
+						h1 {
+							font-family: fantasy;
+							font-size: 3vw;
+							text-align: right;
+							text-transform: capitalize;
+						}
+						h1 a {
+							color: inherit;
+							text-decoration: none;
+						}
+
+						pre {
+							font-family: serif;	
+							font-size: 3vw;
+						}
+
+					</style>
+				</head>
+				<body>
+					<h1><a href="${req.url}">${deslug(grammar)}</a></h1>
+					<pre>${traceryOutput}</pre>
+				</body>
+			</html>
+				`;
 		} catch (err) {
 			if (err.code === 'MODULE_NOT_FOUND') {
 				res.statusCode = 404;
@@ -32,10 +67,10 @@ const server = http.createServer((req, res) => {
 		}
 
 		res.statusCode = 200;
-		res.setHeader('Content-Type', 'text/plain');
-	  	res.end(traceryOutput);
+		res.setHeader('Content-Type', 'text/html');
+	  	res.end(html);
 	} catch (err) {
-		console.log({ url: req.url, err });
+		console.error({ url: req.url, err });
 		res.statusCode = 503;
 		res.setHeader('Content-Type', 'text/plain');
 		res.end(JSON.stringify({ err }, 4));
@@ -66,4 +101,8 @@ function generateText(config) {
 	const text = grammar.flatten('#origin#');
 
 	return text;
+}
+
+function deslug(phrase) {
+	return phrase.replace(/[^\w]/g, ' ');
 }
