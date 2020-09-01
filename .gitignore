@@ -1,5 +1,5 @@
 node_modules
-.*.swp
+.*.sw*
 .DS_Store
 
 output/*
