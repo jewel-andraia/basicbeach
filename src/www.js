@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
 		console.log({ reqUrl });
 		const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
 		const grammar = path && path.groups.grammar;
-		const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 99999);
+		const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
 
 		console.debug({ reqUrl, grammar });
 
