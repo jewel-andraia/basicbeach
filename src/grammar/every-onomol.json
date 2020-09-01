@@ -1,0 +1,4 @@
+{
+	"origin": "#corpora-animals-common.replace(a,o).replace(e,o).replace(y,o).replace(i,o).replace(u,o)#",
+	"corpora-animals-common": []
+}
