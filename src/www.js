@@ -14,12 +14,14 @@ const server = http.createServer((req, res) => {
 		console.log({ reqUrl });
 		const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
 		const grammar = path && path.groups.grammar || 't21-tracery-readme';
+		const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 99999);
 
 		console.debug({ reqUrl, grammar });
 		let html = '<html>honk';
 		try {
 			const traceryOutput = generateText({
-			      grammar,
+				grammar,
+				seed,
 			});
 			html = `
 			<html>
@@ -63,8 +65,8 @@ const server = http.createServer((req, res) => {
 					</style>
 				</head>
 				<body>
-					<h1><a href="${req.url}">${deslug(grammar)}</a></h1>
-					<pre>${traceryOutput}</pre>
+					<h1><a href="${reqUrl.pathname}?seed=${traceryOutput.config.seed}">${deslug(grammar)}</a></h1>
+					<pre>${traceryOutput.output.text}</pre>
 					<footer>nonsense provided by <a href="https://twitter.com/andytuba">@andytuba</a></footer>
 				</body>
 			</html>
@@ -113,7 +115,12 @@ function generateText(config) {
 	grammar.addModifiers(tracery.baseEngModifiers);
 	const text = grammar.flatten('#origin#');
 
-	return text;
+	return {
+		config,
+		output: {
+			text,
+		},
+	};
 }
 
 function deslug(phrase) {
