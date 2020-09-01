@@ -1,8 +1,5 @@
-
 function preprocessor(grammar) {
-    grammar = require('./_corpora')(grammar);
-
-    return grammar;
+    return require('./_corpora')(grammar);
 }
 
 module.exports = preprocessor;
