@@ -1,0 +1,13 @@
+{
+	"origin": "\"#immutable dumbassery#\" is #poetry.a#",
+	"immutable dumbassery": "#immutable# #dumbassery#",
+	"immutable": ["#corpora-words-adjs#"],
+	"dumbassery": ["dumbassery", "#corpora-words-states_of_drunkenness#", "#corpora-words-states_of_drunkenness#ery"],
+	"poetry": ["#clothing-adj# #corpora-objects-clothing-clothes#", "poetry", "#corpora-words-nouns#"],
+	"clothing-adj": ["comfy", "cozy", "rough", "well-tailored", "poorly tailored", "ill-fitting", "slim", "hip", "stylish", "natty", "ratty", "tattered"],
+	"corpora-objects-clothing-clothes": [],
+	"corpora-words-adjs": [],
+	"corpora-words-states_of_drunkenness": [],
+	"corpora-words-expletives": [],
+	"corpora-words-nouns": []
+}

@@ -21,7 +21,7 @@
     "you": [
         "you",
         "yourself",
-        "#creature.a.replace(' ', space).#",
+        "#creature.a.replace(' ', space)#",
         "#proper noun#"
     ],
     "proper noun": [
