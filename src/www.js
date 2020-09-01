@@ -26,29 +26,38 @@ const server = http.createServer((req, res) => {
 				<head>
 					<title>/tracery/${grammar}</title>
 					<style>
-						body {
+						html {
 							background-color: cornflowerblue;
 							color: antiquewhite;
+							font-size: 5vw;
+						}
+						body {
 							padding: 3%;
 						}
 
 						h1 {
 							font-family: sans-serif;
 							font-style: oblique;
-							font-size: 3vw;
+							font-size: .8rem;
 							text-align: right;
 							text-transform: capitalize;
 						}
-						h1 a {
+						a {
 							color: inherit;
 							text-decoration: none;
 						}
 
 						pre {
 							font-family: serif;	
-							font-size: 3vw;
+							font-size: 1rem;
 							width: 80%;
 							white-space: pre-wrap;
+						}
+
+
+						footer {
+							font-size: .5rem;
+							text-align: right;
 						}
 
 					</style>
@@ -56,6 +65,7 @@ const server = http.createServer((req, res) => {
 				<body>
 					<h1><a href="${req.url}">${deslug(grammar)}</a></h1>
 					<pre>${traceryOutput}</pre>
+					<footer>nonsense provided by <a href="https://twitter.com/andytuba">@andytuba</a></footer>
 				</body>
 			</html>
 				`;
