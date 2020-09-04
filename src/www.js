@@ -80,7 +80,7 @@ function traceryHtml({ grammar = '', seed }) {
 				text-decoration: none;
 			}
 
-			pre {
+			content {
 				font-family: serif;	
 				font-size: 1rem;
 				width: 80%;
@@ -97,7 +97,7 @@ function traceryHtml({ grammar = '', seed }) {
 	</head>
 	<body>
 		<h1><a href="?">${deslug(grammar)}</a> <a href="?seed=${traceryOutput.config.seed}">&#x1f517;</a></h1>
-		<pre>${traceryOutput.output.text}</pre>
+		<content>${traceryOutput.output.text}</content>
 		<footer><a href="https://github.com/andytuba/basicbeach" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a></footer>
 	</body>
 </html>
