@@ -1,0 +1,12 @@
+{
+	"origin": "#header#\n#row#\n#row#\n#row#\n#row#\n#row#\n#row#\n\n\n\n -- https://twitter.com/auto_rain",
+	"header": "#_headerrow#",
+	"_headerrow": "#hcell# #hcell# #hcell# #hcell# #hcell# #hcell# #hcell# #hcell# #hcell# #hcell#",
+	"row": ["#_row#", "#_row#", ""],
+	"_row": "#cell# #cell# #cell# #cell# #cell# #cell# #cell# #cell# #cell# #cell#",
+	"hcell": ["#emoji-cloud#", "&nbsp;", "&nbsp;", "&nbsp;", "&nbsp;", "&nbsp;","&nbsp;","&nbsp;","&nbsp;"],
+ 	"cell": ["#emoji-droplet#", "#emoji-cloud#", "&nbsp;", "&nbsp;", "&nbsp;", "&nbsp;","&nbsp;","&nbsp;"],
+	"emoji-droplet": ["&\\#128167;", "&\\#x1F4A6;"],
+	"emoji-cloud": ["&\\#x2601;", "&\\#x1f329;", "&\\#x26c8;"]
+ 
+}
