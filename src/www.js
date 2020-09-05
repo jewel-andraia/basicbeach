@@ -1,4 +1,4 @@
-const http = require('http');
+const express = require('express');
 const nodescad = require('nodescad');
 const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
@@ -10,7 +10,35 @@ const projectTraceryModifiers = require('./lib/modifiers');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const app = express();
+
+app.get('/', (req, res) => {
+	res.send('Bespoke tracery project by andytuba');
+});
+
+app.param('grammar', (req, res, next, value, name) => {
+	let source = {};
+	try {
+		const source = require(`./grammar/${value}.json`);
+	} catch (e) {
+		if (e.code === 'MODULE_NOT_FOUND') {
+			return next(createError(404, `can't speak ${value}`));
+		}
+	}
+	let transform = x => x;
+	try {
+		transform = require(`./grammar/${value}.js`);
+	} catch (e) {
+		if (e.code !== 'MODULE_NOT_FOUND') {
+			return next(createError(500, `error running preprocessor for ${value}`);
+		}
+	}
+	const grammar = transform(source);
+	req.params[name] = grammar;
+	return next();
+});
+
+app.get('/
 	try {
 		const reqUrl = url.parse(req.url, true);
 		console.log({ reqUrl });
@@ -47,7 +75,7 @@ const server = http.createServer((req, res) => {
 	}
 });
 
-server.listen(port, hostname, () => {
+app.listen(port, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
 
@@ -56,7 +84,7 @@ function traceryHtml({ grammar = '', seed }) {
 		grammar: grammar || 't21-tracery-readme',
 		seed,
 	});
-	console.debug( { grammar, seed, traceryOutput });
+	console.debug( traceryOutput );
 	html = `
 <html>
 	<head>
