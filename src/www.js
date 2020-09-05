@@ -1,9 +1,11 @@
-const tracery = require('tracery-grammar');
+const http = require('http');
 const nodescad = require('nodescad');
 const seedrandom = require('seedrandom');
-
-const http = require('http');
+const tracery = require('tracery-grammar');
 const url = require('url');
+
+const projectTraceryModifiers = require('./lib/modifiers');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -54,6 +56,7 @@ function traceryHtml({ grammar = '', seed }) {
 		grammar: grammar || 't21-tracery-readme',
 		seed,
 	});
+	console.debug( { grammar, seed, traceryOutput });
 	html = `
 <html>
 	<head>
@@ -122,6 +125,7 @@ function generateText(config) {
 
 	const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
 	grammar.addModifiers(tracery.baseEngModifiers);
+	grammar.addModifiers(projectTraceryModifiers);
 	const text = grammar.flatten('#origin#');
 
 	return {
