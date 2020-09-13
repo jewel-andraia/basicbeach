@@ -101,7 +101,10 @@ function traceryHtml({ grammar = '', seed }) {
 	<body>
 		<h1><a href="?">${deslug(grammar)}</a> <a href="?seed=${traceryOutput.config.seed}">&#x1f517;</a></h1>
 		<content>${traceryOutput.output.text}</content>
-		<footer><a href="https://github.com/andytuba/basicbeach" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a></footer>
+		<footer>
+			<a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/${traceryOutput.config.grammar}.json" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
+			${!traceryOutput.output.attribution ? '' : `<p>inspired by <a href="${traceryOutput.output.attribution}" target="_blank">${traceryOutput.output.attribution}</a></p>`}
+		</footer>
 	</body>
 </html>
 	`;
