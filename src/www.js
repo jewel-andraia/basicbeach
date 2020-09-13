@@ -130,11 +130,16 @@ function generateText(config) {
 	grammar.addModifiers(tracery.baseEngModifiers);
 	grammar.addModifiers(projectTraceryModifiers);
 	const text = grammar.flatten('#origin#');
+	let attribution = grammar.flatten('#_attribution#');
+	if (attribution === '((_attribution))') {
+		attribution = void 0;
+	}
 
 	return {
 		config,
 		output: {
 			text,
+			attribution,
 		},
 	};
 }
