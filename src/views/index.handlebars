@@ -1,0 +1,14 @@
+<nav>
+<ul>
+{{#each grammars}}
+  <li><a href="./{{this}}">{{deslug this}}</a></li>
+{{/each}}
+</ul>
+</nav>
+
+<footer>
+<a href="https://github.com/andytuba/basicbeach/" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
+{{#if output.attribution}}
+<p>inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
+{{/if}}
+</footer>

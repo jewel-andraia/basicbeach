@@ -1,6 +1,5 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
-const http = require('http');
 const nodescad = require('nodescad');
 const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
@@ -24,11 +23,16 @@ app.set('views', 'src/views/');
 
 /*- Helpers -*/
 
-app.get(/^\/(?:\w+)(?:\/([\w\-]+))?/, function(req, res)  {
+app.get('/tracery', function(req, res) {
+	res.render('index', {
+		grammars: ['every-onomol'],
+	});
+});
+
+app.get('/tracery/:grammar', function(req, res)  {
 				const reqUrl = url.parse(req.url, true);
 				console.log({ reqUrl });
-				const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
-				const grammar = path && path.groups.grammar;
+				const grammar = req.params.grammar;
 				const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
 
 				console.debug({ reqUrl, grammar });
@@ -37,7 +41,7 @@ app.get(/^\/(?:\w+)(?:\/([\w\-]+))?/, function(req, res)  {
 						seed,
 				});
 				console.debug({ ...traceryOutput });
-				res.render('home', {
+				res.render('grammar-output', {
 						...traceryOutput,	
 						});
 				});
