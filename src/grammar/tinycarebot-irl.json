@@ -1,10 +1,21 @@
 {
 	"origin": "#once again# #humiliated# by feeling #improved# after #tiny self care#",
-	"once again": ["once again"],
-	"humiliated": ["humiliated"],
-	"improved": ["better"],
-	"tiny self care": ["#drink#ing #water#"],
-	"drink": ["drink"],
-	"water": ["water"]
-
+	"once again": [
+	  "once again", "today i am", "inevitably i am", "of course i am",
+		"who would have thought that i'd be", "who woulda thought that i'd be", "whoda thought i'd be",
+		"who would have thunk that i'd be", "who woulda thunk that i'd be", "whoda thunk i'd be"
+		],
+	"humiliated": [
+		"humiliated", "ashamed", "embarrassed", "embarassed", "mortified", "disgraced",
+		"abashed", "shown up"
+		],
+	"improved": ["better", "healthier", "happier", "calmer", "less stressed", "cheered up", "focused"],
+	"tiny self care": ["#drinking# #water#"],
+	"drinking": ["drinking", "eating", "quaffing", "taking", "trying a sip of", "stretching", "checking in on", "listening to", "washing"],
+	"water": [
+		"water", "tea", "coffee",
+		"aspirin", "tylenol", "vitamins", "my meds",
+		"a walk", "a stretch",
+		"my legs", "my arms", "my muscles", "my hands",
+		"my friends", "a song i enjoy"]
 }
