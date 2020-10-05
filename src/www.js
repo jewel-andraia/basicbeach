@@ -1,6 +1,8 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const fs = require('fs');
 const nodescad = require('nodescad');
+const path = require('path');
 const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
 const url = require('url');
@@ -10,6 +12,7 @@ const projectTraceryModifiers = require('./lib/modifiers');
 
 const hostname = '127.0.0.1';
 const port = 3000;
+const grammarDir = path.join(__dirname, 'grammar');
 
 var app = express();
 
@@ -21,11 +24,22 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views', 'src/views/');
 
-/*- Helpers -*/
-
 app.get('/tracery', function(req, res) {
-	res.render('index', {
-		grammars: ['every-onomol'],
+	new Promise((resolve, reject) => {
+		fs.readdir(grammarDir, function(err, files) {
+			if (err) {
+				reject(err);
+			}
+
+		 const grammars = Array.from(new Set(files.map(x => x.split('.')[0])))
+				.filter(x => x[0] !== '_');
+
+			resolve(grammars);
+		});
+	}).then(grammars => {
+		res.render('index', {
+			grammars,
+		});
 	});
 });
 
