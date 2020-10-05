@@ -1,3 +1,5 @@
+const express = require('express');
+const exphbs  = require('express-handlebars');
 const http = require('http');
 const nodescad = require('nodescad');
 const seedrandom = require('seedrandom');
@@ -10,140 +12,81 @@ const projectTraceryModifiers = require('./lib/modifiers');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-	try {
-		const reqUrl = url.parse(req.url, true);
-		console.log({ reqUrl });
-		const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
-		const grammar = path && path.groups.grammar;
-		const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
+var app = express();
 
-		console.debug({ reqUrl, grammar });
+app.engine('handlebars', exphbs({
+	helpers: {
+			'deslug': deslug,
+	},
+}));
+app.set('view engine', 'handlebars');
+app.set('views', 'src/views/');
 
-		
+/*- Helpers -*/
+
+app.get(/^\/(?:\w+)(?:\/([\w\-]+))?/, function(req, res)  {
+				const reqUrl = url.parse(req.url, true);
+				console.log({ reqUrl });
+				const path = reqUrl.path.match(/^\/(?<prefix>\w+)(?:\/(?<grammar>[\w\-]+))?/);
+				const grammar = path && path.groups.grammar;
+				const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
+
+				console.debug({ reqUrl, grammar });
+				const traceryOutput = generateTraceryOutput({
+						grammar: grammar || 't21-tracery-readme',
+						seed,
+				});
+				console.debug({ ...traceryOutput });
+				res.render('home', {
+						...traceryOutput,	
+						});
+				});
 
 
-		let html = '<html>honk';
+app.listen(port);
+
+function generateTraceryOutput(config) {
+		/* Generate text */
+		if (config.seed) {
+				seedrandom(config.seed, { global: true });
+		}
+		let grammarSource = {
+			origin: `No can do ${config.grammar}`,
+		};
 		try {
-			html = traceryHtml({ grammar, seed });
-		} catch (err) {
-			if (err.code === 'MODULE_NOT_FOUND') {
-				res.statusCode = 404;
-				res.setHeader('Content-Type', 'text/plain');
-				res.end(`No can do ${grammar}`);
-				return;
-			}
-			throw err;
+				grammarSource = require(`./grammar/${config.grammar}.json`);
+		} catch (e) {
+				if (e.code !== 'MODULE_NOT_FOUND') {
+						throw e;
+				}
+		}
+		let grammarPreprocessor = x => x;
+		try {
+				grammarPreprocessor = require(`./grammar/${config.grammar}.js`);
+		} catch (e) {
+				if (e.code !== 'MODULE_NOT_FOUND') {
+						throw e;
+				}
 		}
 
-		res.statusCode = 200;
-		res.setHeader('Content-Type', 'text/html');
-	  	res.end(html);
-	} catch (err) {
-		console.error({ url: req.url, err });
-		res.statusCode = 503;
-		res.setHeader('Content-Type', 'text/plain');
-		res.end(JSON.stringify({ err }, 4));
-	}
-});
-
-server.listen(port, hostname, () => {
-	console.log(`Server running at http://${hostname}:${port}/`);
-});
-
-function traceryHtml({ grammar = '', seed }) {
-	const traceryOutput = generateText({
-		grammar: grammar || 't21-tracery-readme',
-		seed,
-	});
-	console.debug( { grammar, seed, traceryOutput });
-	html = `
-<html>
-	<head>
-		<title>/tracery/${grammar}</title>
-		<style>
-			html {
-				background-color: cornflowerblue;
-				color: antiquewhite;
-				font-size: 5vw;
-			}
-			body {
-				padding: 3%;
-			}
-
-			h1 {
-				font-family: sans-serif;
-				font-style: oblique;
-				font-size: .8rem;
-				text-align: right;
-				text-transform: capitalize;
-			}
-			a {
-				color: inherit;
-				text-decoration: none;
-			}
-
-			content {
-				font-family: serif;	
-				font-size: 1rem;
-				width: 80%;
-				white-space: pre-wrap;
-			}
-
-
-			footer {
-				font-size: .5rem;
-				text-align: right;
-			}
-
-		</style>
-	</head>
-	<body>
-		<h1><a href="?">${deslug(grammar)}</a> <a href="?seed=${traceryOutput.config.seed}">&#x1f517;</a></h1>
-		<content>${traceryOutput.output.text}</content>
-		<footer>
-			<a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/${traceryOutput.config.grammar}.json" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
-			${!traceryOutput.output.attribution ? '' : `<p>inspired by <a href="${traceryOutput.output.attribution}" target="_blank">${traceryOutput.output.attribution}</a></p>`}
-		</footer>
-	</body>
-</html>
-	`;
-	return html;
-}
-
-function generateText(config) {
-	/* Generate text */
-	if (config.seed) {
-		seedrandom(config.seed, { global: true });
-	}
-	const grammarSource = require(`./grammar/${config.grammar}.json`);
-	let grammarPreprocessor = x => x;
-	try {
-		grammarPreprocessor = require(`./grammar/${config.grammar}.js`);
-	} catch (e) {
-		if (e.code !== 'MODULE_NOT_FOUND') {
-			throw e;
+		const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
+		grammar.addModifiers(tracery.baseEngModifiers);
+		grammar.addModifiers(projectTraceryModifiers);
+		const text = grammar.flatten('#origin#');
+		let attribution = grammar.flatten('#_attribution#');
+		if (attribution === '((_attribution))') {
+				attribution = void 0;
 		}
-	}
 
-	const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
-	grammar.addModifiers(tracery.baseEngModifiers);
-	grammar.addModifiers(projectTraceryModifiers);
-	const text = grammar.flatten('#origin#');
-	let attribution = grammar.flatten('#_attribution#');
-	if (attribution === '((_attribution))') {
-		attribution = void 0;
-	}
-
-	return {
-		config,
-		output: {
-			text,
-			attribution,
-		},
-	};
+		return {
+				config,
+						output: {
+								text,
+								attribution,
+						},
+		};
 }
 
 function deslug(phrase) {
-	return phrase.replace(/[^\w]/g, ' ');
+		return !phrase ? phrase : phrase.replace(/[^\w]/g, ' ');
 }
