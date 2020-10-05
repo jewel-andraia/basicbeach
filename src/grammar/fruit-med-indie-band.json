@@ -1,0 +1,16 @@
+{
+	"_attribution": "https://twitter.com/marysuewriter/status/1312293319196647424",
+	"origin": "my indie band name is #favorite fruit# #last reason i took medicine#",
+	
+	"favorite fruit": "#corpora-foods-fruits#",
+	"corpora-foods-fruits": [],
+
+	"last reason i took medicine": [
+		"#corpora-medicine-diseases#",
+		"#corpora-medicine-symptoms#",
+		"#corpora-medicine-infectious_diseases-diseases#"],
+	
+	"corpora-medicine-diseases": [],
+	"corpora-medicine-symptoms": [],
+	"corpora-medicine-infectious_diseases-diseases": []
+}
