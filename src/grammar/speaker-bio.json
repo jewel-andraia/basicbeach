@@ -1,0 +1,11 @@
+{
+	"origin": ["#origin-1", "#origin-2#", "#origin-3#"],
+  "_attribution": [
+		"https://twitter.com/IanColdwater/status/1310662547012493312",
+		"https://twitter.com/TheKaterTot/status/1310667322948902913",
+	 	"https://twitter.com/TheKaterTot/status/1311008941917138945"
+		],
+	"origin-1": "#name# is a #title# at #company#, where #pronoun# #does thing you do#. In #name or pronoun#’s #spare time#, #pronoun# #enjoys# #doing non-work thing# and #food or drink#.",
+	"origin-2": "scene: #central california#. the #july# #sun# #reflects# off the #windshield# of a #station wagon# driven by a #woman# #whose water broke# #hours ago#. #three# #small children# #scream# in #the backseat#, but none of them will #be your speaker# #today#. Your speaker is about #to be born#",
+	"origin-3": "#One time# my #grandpa# #took a hard corner# in #his RV# and #a can# of #cream corn# flew out of a #cabinet# and #hit# me in #the head#. I #think# that's when I got my #personality#."
+}
