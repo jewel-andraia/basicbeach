@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const addTrailingSlash = require('connect-slashes');
 const fs = require('fs');
 const nodescad = require('nodescad');
 const path = require('path');
@@ -15,6 +16,10 @@ const port = 3000;
 const grammarDir = path.join(__dirname, 'grammar');
 
 var app = express();
+
+app.use(addTrailingSlash());
+
+
 
 app.engine('handlebars', exphbs({
 	helpers: {
