@@ -49,14 +49,14 @@ app.get('/tracery', function(req, res) {
 	});
 });
 
-app.get('/tracery/:grammar', function(req, res)  {
+app.get('/tracery/:grammar', async function(req, res)  {
 				const reqUrl = url.parse(req.url, true);
 				console.log({ reqUrl });
 				const grammar = req.params.grammar;
 				const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
 
 				console.debug({ reqUrl, grammar });
-				const traceryOutput = generateTraceryOutput({
+				const traceryOutput = await generateTraceryOutput({
 						grammar: grammar || 't21-tracery-readme',
 						seed,
 				});
@@ -67,9 +67,10 @@ app.get('/tracery/:grammar', function(req, res)  {
 				});
 
 
+
 app.listen(port);
 
-function generateTraceryOutput(config) {
+async function generateTraceryOutput(config) {
 		/* Generate text */
 		if (config.seed) {
 				seedrandom(config.seed, { global: true });
@@ -87,13 +88,14 @@ function generateTraceryOutput(config) {
 		let grammarPreprocessor = x => x;
 		try {
 				grammarPreprocessor = require(`./grammar/${config.grammar}.js`);
+				grammarSource = await grammarPreprocessor(grammarSource);
 		} catch (e) {
 				if (e.code !== 'MODULE_NOT_FOUND') {
 						throw e;
 				}
 		}
 
-		const grammar = tracery.createGrammar(grammarPreprocessor(grammarSource));
+		const grammar = tracery.createGrammar(grammarSource);
 		grammar.addModifiers(tracery.baseEngModifiers);
 		grammar.addModifiers(projectTraceryModifiers);
 		const text = grammar.flatten('#origin#');
