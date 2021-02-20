@@ -88,13 +88,14 @@ async function generateTraceryOutput(config) {
 		let grammarPreprocessor = x => x;
 		try {
 				grammarPreprocessor = require(`./grammar/${config.grammar}.js`);
-				grammarSource = await grammarPreprocessor(grammarSource);
 		} catch (e) {
 				if (e.code !== 'MODULE_NOT_FOUND') {
+						console.error('Grammar preprocessor failed', e);
 						throw e;
 				}
 		}
-
+		
+		grammarSource = await grammarPreprocessor(grammarSource);
 		const grammar = tracery.createGrammar(grammarSource);
 		grammar.addModifiers(tracery.baseEngModifiers);
 		grammar.addModifiers(projectTraceryModifiers);
