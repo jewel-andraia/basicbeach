@@ -37,7 +37,8 @@ app.get('/tracery', function(req, res) {
 			}
 
 		 const grammars = Array.from(new Set(files.map(x => x.split('.')[0])))
-				.filter(x => x[0] !== '_');
+				.filter(x => x[0] !== '_')
+				.filter(x => x);
 
 			resolve(grammars);
 		});
