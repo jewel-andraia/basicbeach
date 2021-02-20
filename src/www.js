@@ -95,10 +95,19 @@ async function generateTraceryOutput(config) {
 				}
 		}
 		
-		grammarSource = await grammarPreprocessor(grammarSource);
+		const preprocessed = await grammarPreprocessor(grammarSource);
+		if (!preprocessed.grammar) {
+			grammarSource = preprocessed;
+		}
+		if (preprocessed.grammar) {
+			grammarSource = preprocessed.grammar;
+		}
 		const grammar = tracery.createGrammar(grammarSource);
 		grammar.addModifiers(tracery.baseEngModifiers);
 		grammar.addModifiers(projectTraceryModifiers);
+		if (preprocessed.modifiers) {
+			grammar.addModifiers(preprocessed.modifiers);
+		}
 		const text = grammar.flatten('#origin#');
 		let attribution = grammar.flatten('#_attribution#');
 		if (attribution === '((_attribution))') {
