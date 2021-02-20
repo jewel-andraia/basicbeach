@@ -1,7 +1,7 @@
 
 var corpora = require('corpora-project');
 
-const corporaRE = /^corpora-(\w+)-([\w_]+)(?:-([\w_]+))?$/;
+const corporaRE = /^corpora-(\w+)-([\w_]+)(?:-([\w_]+))?($|\/)/;
 
 function preprocessor(grammar) {
     for (let key in grammar) {

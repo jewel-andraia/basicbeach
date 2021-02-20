@@ -1,0 +1,13 @@
+{
+	"origin": "🧙🔮 #spread#",
+
+	"spread": ["#three card#", "#four card#", "#square#"],
+	"three card": "Your 3-card spread:\n#card# • #card# • #card#",
+	"four card": "Your 4-card spread:\n#card# • #card# • #card# • #card#",
+	"square": "Your 4-card spread:\n#card# • #card#\n#card# • #card#",
+
+	
+	"card": ["#corpora-divination-tarot_interpretations/name##reversed#"],
+	"reversed": ["", " (reversed)"],
+	"corpora-divination-tarot_interpretations/name|jq:[].name": ""
+}
