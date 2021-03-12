@@ -3,14 +3,27 @@
 	"origin": "my indie band name is #favorite fruit# #last reason i took medicine#",
 	
 	"favorite fruit": "#corpora-foods-fruits#",
-	"corpora-foods-fruits": [],
+	"corpora-foods-fruits": {
+		"_contextAwareType": "corpora",
+		"path": ["foods", "fruits"]
+	},
 
 	"last reason i took medicine": [
 		"#corpora-medicine-diseases#",
 		"#corpora-medicine-symptoms#",
-		"#corpora-medicine-infectious_diseases-diseases#"],
+		"#corpora-medicine-infectious_diseases-diseases#"
+	],
 	
-	"corpora-medicine-diseases": [],
-	"corpora-medicine-symptoms": [],
-	"corpora-medicine-infectious_diseases-diseases": []
+	"corpora-medicine-diseases": {
+		"_contextAwareType": "corpora",
+        "path": ["medicine", "diseases"]
+    },
+	"corpora-medicine-symptoms": {
+		"_contextAwareType": "corpora",
+        "path": ["medicine", "symptoms"]
+    }, 
+	"corpora-medicine-infectious_diseases-diseases": {
+		"_contextAwareType": "corpora",
+        "path": ["medicine", "infectious_diseases", "diseases"]
+    }
 }

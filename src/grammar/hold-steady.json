@@ -1,10 +1,42 @@
 {
 	"_attribution": "https://twitter.com/AmandaRTubbs/status/1153405071478030336",
 	"origin": "And the #noun# kinda looked like #noun#\nThen the townies started to #act of violence#\nAnd the party at the #rural structure# was tiring\nThe #poor decision# was sorta worth it",
-		"noun": "#corpora-words-nouns#",
-		"corpora-words-nouns": "noun",
-		"act of violence": ["shank a dude", "cut a rug", "#corpora-words-ergative_verbs#"],
-		"corpora-words-ergative_verbs": "erg",
-		"rural structure": ["barn", "tractor pull", "bonfire", "corn field", "water tower", "grange", "back forty", "town bar", "dog run"],
-		"poor decision": ["whiskey", "beer", "kiss", "hokey pokey", "roll in the hay"]
+	"noun": "#corpora-words-nouns#",
+	"corpora-words-nouns": {
+		"_contextAwareType": "corpora",
+		"path": [
+			"words",
+			"nouns"
+		]
+	},
+	"act of violence": [
+		"shank a dude",
+		"cut a rug",
+		"#corpora-words-ergative_verbs#"
+	],
+	"corpora-words-ergative_verbs": {
+		"_contextAwareType": "corpora",
+		"path": [
+			"words",
+			"ergative_verbs"
+		]
+	},
+	"rural structure": [
+		"barn",
+		"tractor pull",
+		"bonfire",
+		"corn field",
+		"water tower",
+		"grange",
+		"back forty",
+		"town bar",
+		"dog run"
+	],
+	"poor decision": [
+		"whiskey",
+		"beer",
+		"kiss",
+		"hokey pokey",
+		"roll in the hay"
+	]
 }

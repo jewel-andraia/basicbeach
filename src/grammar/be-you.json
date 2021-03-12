@@ -30,5 +30,8 @@
     "creature": [
         "#corpora-animals-common#"
     ],
-    "corpora-animals-common": []
+    "corpora-animals-common": {
+        "_contextAwareType": "corpora",
+        "path": ["animals", "common"]
+    }
 }
