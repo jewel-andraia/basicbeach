@@ -1,0 +1,34 @@
+{
+	"_attribution": "https://twitter.com/Kendragarden/status/1370432639287496704",
+		"origin": ["#human groups.capitalize# don't want #nouns#; they want #foo# and #bar#."],
+		"human groups": ["girls", "boys", "women", "men", "babies", "#jobs.s#"],
+		"jobs": {
+			"_contextAwareType": "corpora",
+			"path": ["humans", "occupations"]
+		},
+		"nouns": ["#human groups#"],
+		"foo": ["#fields of study# #studies#", "#isms of art# #studies#"],
+		"bar": ["#food#"],
+		"studies": ["textbooks", "courses"],
+		"fields of study": {
+			"_contextAwareType": "corpora",
+			"path": ["books", "academic_subjects", "subjects"]
+		},
+		"isms of art": {
+			"_contextAwareType": "corpora",
+			"path": ["art", "isms"]
+		},
+		"food": ["#apples# apples", "#beer#", "#cocktails.s#"],
+		"apples": {
+			"_contextAwareType": "corpora",
+			"path": ["foods", "apple_cultivars", "cultivars"]
+		},
+		"beer": {
+			"_contextAwareType": "corpora",
+			"path": ["foods", "beer_styles"]
+		},
+		"cocktails": {
+			"_contextAwareType": "corpora",
+			"path": ["foods", "iba_cocktails", "cocktails"]
+		}
+}

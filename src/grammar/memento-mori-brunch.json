@@ -1,0 +1,17 @@
+{
+	"_attribution": "https://twitter.com/rabihalameddine/status/1370416813129883648",
+		"origin": ["#archeological find#"],
+		"archeological find": [
+			"#age# #item# #artifact# in #location# #that says# '#platitude#'",
+			"#item# #artifact# from #years# years ago discovered in #location# #that says# '#platitude#'"
+		],
+		"age": ["#years# year old", "#century#"],
+		"years": ["#digit#00", "#digit##digit#00"],
+		"century": ["#digit##digit.ordinal# century BC", "#digit.ordinal# century CE"],
+		"digit": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+		"item": ["skeleton", "chicken"],
+		"artifact": ["mosaic", "bowl", "dish", "etching", "graffiti"],
+		"location": ["Turkey", "Greece", "Athens", "Rome", "Pompei"],
+		"that says": ["that says", "inscribed with"],
+		"platitude": ["Be cheerful, enjoy your life", "ζήσε γέλα αγάπα", "Live Laugh Love", "Memento mori"]
+}
