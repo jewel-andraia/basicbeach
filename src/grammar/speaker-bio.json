@@ -1,11 +1,63 @@
 {
-	"origin": ["#origin-1", "#origin-2#", "#origin-3#"],
-  "_attribution": [
+	"origin": ["#[setPronoun]origins#"],
+	"origins": ["#origin-1#", "#origin-2#", "#origin-3#"],
+	"_attribution": [
 		"https://twitter.com/IanColdwater/status/1310662547012493312",
-		"https://twitter.com/TheKaterTot/status/1310667322948902913",
-	 	"https://twitter.com/TheKaterTot/status/1311008941917138945"
-		],
-	"origin-1": "#name# is a #title# at #company#, where #pronoun# #does thing you do#. In #name or pronoun#’s #spare time#, #pronoun# #enjoys# #doing non-work thing# and #food or drink#.",
+	"https://twitter.com/TheKaterTot/status/1310667322948902913",
+	"https://twitter.com/TheKaterTot/status/1311008941917138945"
+	],
+	"setPronoun": [
+		"[pronoun:he][direct target pronoun:him][possessive pronoun:his]",
+	"[pronoun:she][direct target pronoun:her][possessive pronoun:she]",
+	"[pronoun:they][direct target pronoun:them][possessive pronoun:they]"
+	],
+	"origin-1": "#name# is a #title# at #company#, where #pronoun# #does thing you do#. In #possessive name or pronoun# #spare time#, #pronoun# #enjoys# #doing non-work thing# and #food or drink#.",
 	"origin-2": "scene: #central california#. the #july# #sun# #reflects# off the #windshield# of a #station wagon# driven by a #woman# #whose water broke# #hours ago#. #three# #small children# #scream# in #the backseat#, but none of them will #be your speaker# #today#. Your speaker is about #to be born#",
-	"origin-3": "#One time# my #grandpa# #took a hard corner# in #his RV# and #a can# of #cream corn# flew out of a #cabinet# and #hit# me in #the head#. I #think# that's when I got my #personality#."
+
+	"central california": ["#region#", "The #section# of #region#"],
+	"july": ["#month#", "#season#"],
+	"season": ["summer", "winter", "spring", "fall"],
+	"month": "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+	"sun": ["sun", "sunshine", "moonlight", "glare"],
+	"reflects": ["reflects", "sunshines", "glints"],
+	"windshield": ["windshield", "window", "front window", "glass"],
+	"woman": ["woman", "man", "person"],
+	"whose water broke": ["whose water broke", "who realized it was almost too late", "who felt the rumbling"],
+	"hours ago": ["hours ago", "a moment ago", "just now", "#number# miles ago", "#number# minutes ago"],
+	"number": ["#digit#", "#digit##digit_incl_0#"],
+	"digit": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+	"digit_incl_0": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+	"three": ["two", "three", "four", "five", "six", "half a dozen", "two too many", "three too many"],
+	"small children": ["#_small children#", "#_small children#" ,"#_small children#", "#_small children# and a #pet#"],
+	"_small children": ["small children", "babies", "kids", "young'ns", "small fries", "human beans"],
+	"pet": ["cat", "bird", "dog", "kitten", "puppy", "gremlin"],
+	"station wagon": "#RV#",
+	"section": ["back roads", "winding hills", "fields", "alleyways"],
+	"region": ["Central California", "Los Angeles", "Kentucky", "Pennsylvania", "Azerjibain"],
+	"scream": ["scream", "yell", "cheer", "fuss", "fight", "squabble"],
+	"be your speaker": ["be your speaker", "present to you", "share words with you", "speak"],
+	"today": ["today", "tonight", "this morning", "this afternoon", "#during# #this this time period's# #event#"],
+	"during": ["during", "at", "for"],
+	"this time period's": ["this", "today's", "tonight's", "upcoming", "the next"],
+	"event": ["at this conference", "for this talk", "at this event", "for this event", "during this session", "at this session"],
+	"to be born": ["to be born", "to emerge into the world", "to emerge from the womb", "to see the light of day"],
+
+	"origin-3": "#One time# my #grandpa# #took a hard corner# in #his# #RV# and a #can# of #cream corn# flew out of a #cabinet# and #hit# me in #the head#. I #think# that's when I got my #personality#.",
+
+	"One time": ["One time"],
+	"grandpa": ["grandpa", "grandma", "grandfather", "grandmother", "gramps", "papa", "cousin", "brother", "sister", "sibling", "parent", "father", "mother", "boyfriend", "lovefriend"],
+	"took a hard corner": ["took a hard corner"],
+	"his": "#possessive pronoun#",
+	"RV": ["RV", "VW", "Beetle", "Ford", "pickup", "station wagon", "woodie"],
+	"cabinet": ["cabinet", "glove box", "sack", "tote", "tote bag", "shopping bag"],
+	"can": ["can", "tin", "box", "carton", "loose piece"],
+	"cream corn": ["cream corn", "condensed milk", "corn", "peas", "shallots"],
+	"hit": ["hit", "bonked", "conked", "pegged"],
+	"the head": ["#my# head", "#my# collarbone", "#my# skull", "#my# #right#ear", "#my# #right##eyebrow"],
+	"right": ["left ", "right ", ""],
+	"my": ["the", "my"],
+	"think": ["think", "bet", "suspect", "pretend"],
+	"personality": ["personality", "#positive# sense of #fashion#"],
+	"positive": ["stunning", "glowing", "impeccable", "ludicrous", "wild", "zany"],
+	"fashion": ["fashion", "humor"]
 }
