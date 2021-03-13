@@ -8,7 +8,9 @@
 		},
 		"nouns": ["#human groups#"],
 		"foo": ["#fields of study# #studies#", "#isms of art# #studies#"],
-		"bar": ["#food#"],
+		"bar": ["#food#", "a #place# within #modality# distance of their #place#"],
+		"modality": ["walking", "driving", "crawling", "stumbling", "biking"],
+		"place": ["hairdresser", "apartment"],
 		"studies": ["textbooks", "courses"],
 		"fields of study": {
 			"_contextAwareType": "corpora",
@@ -18,7 +20,7 @@
 			"_contextAwareType": "corpora",
 			"path": ["art", "isms"]
 		},
-		"food": ["#apples# apples", "#beer#", "#cocktails.s#"],
+		"food": ["#apples# apples", "#beer.s#", "#cocktails.s#"],
 		"apples": {
 			"_contextAwareType": "corpora",
 			"path": ["foods", "apple_cultivars", "cultivars"]
