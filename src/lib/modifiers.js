@@ -4,6 +4,15 @@ const htmlEntity = exports.htmlEntity = function(s) {
 	return emojiUnicode(s).split(' ').map(u => `&\\#x${u};`).join('');
 };
 
+const possessive = exports["'s"] = function(s) {
+	switch (s.substr(s.length - 1)) {
+		case 's':
+		  return s + "'";
+		default:
+			return s + "'s";
+	}
+}
+
 const ordinal = exports.ordinal = function(s) {
 	switch (s.substr(s.length - 1)) {
 		case "1": {

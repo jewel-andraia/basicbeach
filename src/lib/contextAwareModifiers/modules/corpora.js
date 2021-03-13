@@ -10,6 +10,11 @@ async function data(key, specification, context) {
         corpora.getFile(match[0], match[1])[match[2]]
     || corpora.getFile(match[0], match[1])[match[0]]
     || corpora.getFile(match[0], match[1])[match[1]]
+    || corpora.getFile(match[0], match[1], match[2])[match[2]]
+    || corpora.getFile(match[0], match[1], match[2])[match[3]]
+    || corpora.getFile(match[0], match[1], match[2])[match[0]]
+    || corpora.getFile(match[0], match[1], match[2])[match[1]]
+		;
 
     if (!corporaData) {
         throw new Error(`corpora: no corpora-project found for ${match}`);

@@ -214,6 +214,7 @@ async function contextAwareModifierFactory(grammarSource, environment) {
                 loadedData = await module.data(key, specification, environment);
             } catch (e) {
                 console.error([`context-aware modifier: could not load data for ${key}`, specification, e]);
+								loadedData = `((!${key}))`;
             }
 
             const dataKeys = data.addItems(loadedData, key);
