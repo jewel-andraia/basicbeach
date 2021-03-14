@@ -91,7 +91,7 @@
 
 
 
-	"origin-2": "Scene: #central california#. The #july# #sun# #reflects# off the #windshield# of a #station wagon# driven by a #woman# #whose water broke# #hours ago#. #three.capitalizeAll# #small children# #scream# in #the backseat#, but none of them will #be your speaker# #today#. Your speaker is about #to be born#.",
+	"origin-2": "Scene: #central california#. The #july# #sun# #reflects# off the #windshield# of a #station wagon# driven by a #woman# #whose water broke# #hours ago#. #three.capitalize# #small children# #scream# in #the backseat#, but none of them will #be your speaker# #today#. Your speaker is about #to be born#.",
 
 	"central california": ["#region#", "the #section# of #region#"],
 	"july": ["#month#", "#season#"],
