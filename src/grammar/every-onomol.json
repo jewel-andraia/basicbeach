@@ -3,7 +3,7 @@
 	"_attribution": "https://twitter.com/Fred_Delicious/status/1299442276033323009",
 	"onomol": "#corpora-animals-common.replace(a,o).replace(e,o).replace(y,o).replace(i,o).replace(u,o)#",
 	"corpora-animals-common": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["animals", "common"]
 	}
 }

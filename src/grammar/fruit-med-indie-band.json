@@ -4,7 +4,7 @@
 	
 	"favorite fruit": "#corpora-foods-fruits#",
 	"corpora-foods-fruits": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "fruits"]
 	},
 
@@ -15,15 +15,15 @@
 	],
 	
 	"corpora-medicine-diseases": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
         "path": ["medicine", "diseases"]
     },
 	"corpora-medicine-symptoms": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
         "path": ["medicine", "symptoms"]
     }, 
 	"corpora-medicine-infectious_diseases-diseases": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
         "path": ["medicine", "infectious_diseases", "diseases"]
     }
 }

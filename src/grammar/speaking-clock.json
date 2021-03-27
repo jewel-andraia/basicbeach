@@ -11,45 +11,45 @@
         "1/2/2003 4:05 PM"
     ],
     "formattedDate": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "format",
         "format": "{YYYY} MM-DDTHH:mm:ss SSS [Z] A"
     },
     "dateToLocaleString": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "toLocaleString"
     },
     "fulldate": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "format",
         "format": "MM dd, YYYY"
     },
     "HH": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "HH"
     },
     "MM": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "mm"
     },
     "mm": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "mm"
     },
     "hour": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "hour"
     },
     "minute": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "minute"
     },
     "AM": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "AM"
     },
     "AMPM": {
-        "_contextAwareType": "date",
+        "!::": "date",
         "method": "AMPM"
     }
 }

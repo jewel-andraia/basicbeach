@@ -31,7 +31,7 @@
         "#corpora-animals-common#"
     ],
     "corpora-animals-common": {
-        "_contextAwareType": "corpora",
+        "!::": "corpora",
         "path": ["animals", "common"]
     }
 }

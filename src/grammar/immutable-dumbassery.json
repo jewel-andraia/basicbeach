@@ -29,7 +29,7 @@
 		"tattered"
 	],
 	"corpora-objects-clothing-clothes": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"objects",
 			"clothing",
@@ -37,28 +37,28 @@
 		]
 	},
 	"corpora-words-adjs": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"adjs"
 		]
 	},
 	"corpora-words-states_of_drunkenness": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"states_of_drunkenness"
 		]
 	},
 	"corpora-words-expletives": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"expletives"
 		]
 	},
 	"corpora-words-nouns": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"nouns"

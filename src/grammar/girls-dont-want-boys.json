@@ -3,7 +3,7 @@
 		"origin": ["#human groups.capitalize# don't want #nouns#; they want #foo# and #bar#."],
 		"human groups": ["girls", "boys", "women", "men", "babies", "#jobs.s#"],
 		"jobs": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["humans", "occupations"]
 		},
 		"nouns": ["#human groups#"],
@@ -13,24 +13,24 @@
 		"place": ["hairdresser", "apartment"],
 		"studies": ["textbooks", "courses"],
 		"fields of study": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["books", "academic_subjects", "subjects"]
 		},
 		"isms of art": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["art", "isms"]
 		},
 		"food": ["#apples# apples", "#beer.s#", "#cocktails.s#"],
 		"apples": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["foods", "apple_cultivars", "cultivars"]
 		},
 		"beer": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["foods", "beer_styles"]
 		},
 		"cocktails": {
-			"_contextAwareType": "corpora",
+			"!::": "corpora",
 			"path": ["foods", "iba_cocktails", "cocktails"]
 		}
 }

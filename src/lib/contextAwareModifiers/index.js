@@ -38,7 +38,7 @@
  * {
  *   "origin": "#some number#",
  *   "some number": {
- *      "_contextAwareType": "data", 
+ *      "!::": "data", 
  *      "data": {
  *        "one": 1,
  *        "two": 2
@@ -66,7 +66,7 @@
  * 
  * Other contextAwareType modules may specify a default `transformData` function
  * instead of a simple stringifier. That function may use parameters from
- * the { "_contextAwareType" } data.
+ * the { "!::" } data.
  * 
  * ---
  * 
@@ -76,7 +76,7 @@
  * {
  *   "origin": "#number times two#",
  *   "some number": {
- *      "_contextAwareType": "data", 
+ *      "!::": "data", 
  *      "data": {
  *        "one": { "number": 1 },
  *        "two": { "number": 2 }
@@ -84,11 +84,11 @@
  *   },
  *   "number times two": "#!*some number.!&getNumber.!&timesTwo",
  *   "getNumber": {
- *      "_contextAwareType": "jq",
+ *      "!::": "jq",
  *      "path": ".number"
  *   },
  *   "timesTwo": {
- *     "_contextAwareType": "math",
+ *     "!::": "math",
  *     "expression": "x*2",
  *   }
  * }

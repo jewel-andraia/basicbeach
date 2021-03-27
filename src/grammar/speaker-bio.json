@@ -21,15 +21,15 @@
 	"pronoun": "they",
 	"possessive name": "their",
   "first name": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["humans", "firstNames"]
   },
   "nombre": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["humans", "spanishFirstNames"]
   },
 	"surname": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["humans", "authors"]
   },
 	"title": ["engineer", "#level# engineer", "developer relations", "marketer", "manager", "sales associate", "cashier", "barista", "fairy moss gardener", "janitor", "nerd", "solutions architect", "architect", "sales engineer", "customer success manager", "brand manager"],
@@ -47,42 +47,42 @@
 	"enjoys": ["enjoy", "delight in", "prefer"],
 	"doing non-work thing": ["playing #board game#"],
 	"atus": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["humans", "atus_activities"]
 	},
 	"rpg": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["games", "rpg", "rpg_games", "rpgs"]
 	},
 	"board game": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["games", "board_games"]
 	},
 	"company": ["#fortune 500#"],
 	"fortune 500": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["corporations", "fortune500", "companies"]
 	},
 	"food or drink": ["#carbs#", "#beers#", "#carbs# with #curds#", "#carbs# with #fruits#", "#sausages#"],
 	"beers": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "beer_styles"]
 	},
 
 	"carbs": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "breads_and_pastries", "breads"]
 	},
 	"curds": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "curds"]
 	},
 	"fruits": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "fruits"]
 	},
 	"sausages": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["foods", "sausages"]
 	},
 
@@ -116,11 +116,11 @@
 	"region": ["#us state#", "#country#", "#english town#"],
 	"us state": ["Central California", "Los Angeles", "Kentucky", "Pennsylvania"],
 	"country": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["geography", "countries"]
 	},
 	"english town": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": ["geographies", "english_towns_cities", "towns"]
 	},
 	"scream": ["scream", "yell", "cheer", "fuss", "fight", "squabble"],

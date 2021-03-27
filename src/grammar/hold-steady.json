@@ -3,7 +3,7 @@
 	"origin": "And the #noun# kinda looked like #noun#\nThen the townies started to #act of violence#\nAnd the party at the #rural structure# was tiring\nThe #poor decision# was sorta worth it",
 	"noun": "#corpora-words-nouns#",
 	"corpora-words-nouns": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"nouns"
@@ -15,7 +15,7 @@
 		"#corpora-words-ergative_verbs#"
 	],
 	"corpora-words-ergative_verbs": {
-		"_contextAwareType": "corpora",
+		"!::": "corpora",
 		"path": [
 			"words",
 			"ergative_verbs"
