@@ -1,10 +1,14 @@
-
-<h1><a href="?">{{deslug config.grammar}}</a> <a href="?seed={{config.seed}}">&#x1f517;</a></h1>
-<content>{{output.text}}</content>
+<h1>
+    <a tabindex="1" href="?"><span class="text">{{deslug config.grammar}}</span></a>
+    <a href="?" title="re-roll">&#x1f3b2;</a>
+    <a href="?seed={{config.seed}}" title="permalink">&#x1f517;</a>
+    <a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank" title="source">&#x26F2;</a>
+    </h1>
+<content tabindex="2">{{output.text}}</content>
 <footer>
-<a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
 {{#if output.attribution}}
 <p>inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
 {{/if}}
-<p><a href="/tracery">back to the index 📇</a></p>
+<a href="https://github.com/andytuba/basicbeach/" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
+<p><a href="../">back to the index 📇</a></p>
 </footer>
