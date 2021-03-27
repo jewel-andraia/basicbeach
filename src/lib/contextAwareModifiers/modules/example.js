@@ -2,11 +2,11 @@ async function data(key, specification, context) {
     return {};
 }
 
-function modifier(input, context, key, specification) {
+function modifier(input, environment, key, specification) {
     return input;
 }
 
-async function preprocess(grammarSource, context, key, specification) {
+async function preprocess(grammarSource, environment, key, specification) {
     return grammarSource;
 }
 
