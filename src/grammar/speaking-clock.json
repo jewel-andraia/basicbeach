@@ -4,12 +4,17 @@
         "The time is now #hour# #minute# #AMPM#.",
         "The 'full date' of a date hard-coded into the grammar is #specific date.!&fulldate#",
         "The locale representation of a date hard-coded into the grammar is #specific date.!&dateToLocaleString#",
-        "The (formatted) time is now #specific date.!&formattedDate#."
+        "The locale representation of a generated date is #generated date.!&dateToLocaleString#",
+        "The (formatted) time is of a date hard-coded into the #specific date.!&formattedDate#."
     ],
     "specific date": [
         "May 23, 2010",
         "1/2/2003 4:05 PM"
     ],
+    "generated date": ["#month# #day# #year#"],
+    "month": ["January", "feb", "dec"],
+    "day": ["15", "20", "29"],
+    "year": ["2010", "1949", "2099"],
     "formattedDate": {
         "!::": "date",
         "method": "format",
