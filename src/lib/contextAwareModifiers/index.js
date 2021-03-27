@@ -187,7 +187,7 @@ class DataLookup {
         return this._data[collectionKey][itemKey];
     }
 
-    static transformData = function(objOrStr) {
+    static modifier = function(objOrStr) {
         if (typeof objOrStr === 'object') {
             return JSON.stringify(objOrStr);
         }
@@ -227,7 +227,7 @@ async function contextAwareModifierFactory(grammarSource, environment) {
 
             const transformData = typeof module.modifier === "function"
                 ? module.modifier
-                : DataLookup.transformData;
+                : DataLookup.modifier;
 
             modifiers[transformModifierName] = contextAwareModifierDecorator(environment, data, transformData, key, specification);
             grammarSource = {
