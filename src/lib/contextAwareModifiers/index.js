@@ -207,7 +207,7 @@ async function contextAwareModifierFactory(grammarSource, environment) {
     const modifiers = {};
     const data = new DataLookup();
     for (const [key, specification] of Object.entries(grammarSource)) {
-        const module = modules[specification._contextAwareType];
+        const module = modules[specification["!::"]];
         if (!module) {
             continue;
         }
