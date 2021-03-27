@@ -1,14 +1,47 @@
 {
 	"origin": "🧙🔮 #spread#",
 
-	"spread": ["#single card#", "#three card#", "#four card#", "#square#"],
+	"spread": ["#single card#", "#three card#", "#four card#", "#square#", "#major minor"],
 	"single card": "a single card for thought: #card#",
 	"three card": "Your 3-card spread:\n#card# • #card# • #card#",
 	"four card": "Your 4-card spread:\n#card# • #card# • #card# • #card#",
 	"square": "Your 4-card spread:\n#card# • #card#\n#card# • #card#",
+	"major minor": "A major card: #major-cards#; and a minor card: #minor-cards#",
 
 	
-	"card": ["#corpora-divination-tarot_interpretations/name##reversed#"],
+	"card": ["#all-cards##reversed#"],
 	"reversed": ["", " (reversed)"],
-	"corpora-divination-tarot_interpretations/name|jq:[].name": ""
+	"all-cards": {
+		"!_data": {
+			"type": "corpora",
+			"path": ["divination", "tarot_interpretations"]
+
+		},
+		"!_filter": {
+			"type": "jq",
+			"jqPath": "[].name"
+		}
+	},
+	"major-cards": {
+		"!_data": {
+			"type": "corpora",
+			"path": ["divination", "tarot_interpretations"]
+
+		},
+		"!_filter": {
+			"type": "jq",
+			"jqPath": "[] | select(.suit == \"major\") | .name"
+		}
+	},
+	"minor-cards": {
+		"!_data": {
+			"type": "corpora",
+			"path": ["divination", "tarot_interpretations"]
+
+		},
+		"!_filter": {
+			"type": "jq",
+			"jqPath": "[] | select(.suit == \"minor\") | .name"
+		}
+	}
 }

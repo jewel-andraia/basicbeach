@@ -119,6 +119,7 @@ const modules = {
     // groq: require('./modules/groq'),
     corpora: require('./modules/corpora'),
     data: require('./modules/data'),
+    // template: require('./modules/template'),
 };
 
 function environmentFactory(config) {
@@ -199,33 +200,73 @@ function contextAwareModifierDecorator(environment, data, modifier, key, specifi
     }
 }
 
+function getModuleFunction(specification, func) {
+    console.debug({ specification, func });
+    const nil = [];
+    const funcSpec = specification[`!_${func}`];
+    
+    if (!funcSpec) {
+        return nil;
+    }
+    const mod = modules[funcSpec.type];
+    if (!mod) {
+        return nil;
+    }
+
+    if (typeof mod[func] !== "function") {
+        return nil;
+    }
+
+    return [ mod[func], funcSpec ];
+}
+
+function getModuleFunctionsArray(specification, func) {
+    const nil = [];
+    const funcSpec = specification[`!_${func}`];
+    if (!funcSpec) {
+        return nil;
+    }
+
+    if (!Array.isArray(funcSpec)) {
+        return [ getModuleFunction(specification, func) ];
+    }
+
+    return funcSpec
+        .map(s => getModuleFunction({ [`!_${func}`]: s }, func))
+        .filter( x => !!x);
+}
+
 async function contextAwareModifierFactory(grammarSource, environment) {
     const modifiers = {};
     const data = new DataLookup();
     for (const [key, specification] of Object.entries(grammarSource)) {
-        const module = modules[specification._contextAwareType];
-        if (!module) {
-            continue;
-        }
-
-        if (typeof module.data === "function") {
+        const [dataFunc, dataSpec] = getModuleFunction(specification, 'data');
+        if (dataFunc) {
             let loadedData = [];
             try {
-                loadedData = await module.data(key, specification, environment);
+                loadedData = await dataFunc(key, dataSpec, environment);
             } catch (e) {
                 console.error([`context-aware modifier: could not load data for ${key}`, specification, e]);
-								loadedData = `((!${key}))`;
+                                loadedData = `((!${key}))`;
+                loadedData = [`((!!${key}))`];
+            }
+
+            const filters = getModuleFunctionsArray(specification, "filter");
+            console.debug({ filters });
+            if (filters) {
+                loadedData = filters.reduce(([filterFunc, filterSpec], loadedData) => {
+                    filterFunc(key, filterSpec, loadedData, environment);
+                }, loadedData);
             }
 
             const dataKeys = data.addItems(loadedData, key);
             const transformModifierName = modifierSlug("transform", key);
             const indexKey = `!*${key}!`;
 
-            const transformData = typeof module.modifier === "function"
-                ? module.modifier
-                : DataLookup.transformData;
+            const [modifierFunc, modifierSpec] = getModuleFunction(specification, 'modifier')
+                || [ DataLookup.transformData, {}];
 
-            modifiers[transformModifierName] = contextAwareModifierDecorator(environment, data, transformData, key, specification);
+            modifiers[transformModifierName] = contextAwareModifierDecorator(environment, data, modifierFunc, key, modifierSpec);
             grammarSource = {
                 ...grammarSource,
                 [key]: `#${indexKey}.${transformModifierName}#`, // resolve using the default transformer
@@ -233,12 +274,14 @@ async function contextAwareModifierFactory(grammarSource, environment) {
             };
         }
 
-        if (typeof module.modifier === "function") {
-            modifiers[modifierSlug(key)] = contextAwareModifierDecorator(environment, data, module.modifier, key, specification);
+        const [ modifierFunc, modifierSpec ] = getModuleFunction(specification, "modifier");
+        if (modifierFunc) {
+            modifiers[modifierSlug(key)] = contextAwareModifierDecorator(environment, data, modifierMod, key, modifierSpec);
         }
 
-        if (typeof module.preprocess === "function") {
-            grammarSource = await module.preprocess(grammarSource, environment, key, specification);
+        const [ preprocessFunc, preprocessSpec ] = getModuleFunction(specification, "preprocessSpec");
+        if (preprocessSpec) {
+            grammarSource = await preprocessFunc(grammarSource, environment, key, preprocessSpec);
         }
     }
 

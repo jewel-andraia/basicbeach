@@ -31,6 +31,7 @@
     "es6-promisify": "^6.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "groq-js": "^0.2.0",
     "node-jq": "^1.12.0",
     "nodemon": "^2.0.4",
     "nodescad": "git+https://git@github.com/andytuba/nodescad.git#fix-D-quoting",
