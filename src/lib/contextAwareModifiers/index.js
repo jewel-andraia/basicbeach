@@ -82,7 +82,7 @@
  *        "two": { "number": 2 }
  *      },
  *   },
- *   "number times two": "#!*some number.!getNumber.!timesTwo",
+ *   "number times two": "#!*some number.!&getNumber.!&timesTwo",
  *   "getNumber": {
  *      "_contextAwareType": "jq",
  *      "path": ".number"
