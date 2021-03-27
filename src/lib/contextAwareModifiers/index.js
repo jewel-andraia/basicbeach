@@ -119,6 +119,10 @@ const modules = {
     // groq: require('./modules/groq'),
     corpora: require('./modules/corpora'),
     data: require('./modules/data'),
+    date: require('./modules/date'),
+    // environment: require('./modules/environment'),
+    // switch: require('./modules/switch'),
+    // "switch-environment": require('./modules/switch-environment'),
 };
 
 function environmentFactory(config) {

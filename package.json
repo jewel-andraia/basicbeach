@@ -27,6 +27,7 @@
   "dependencies": {
     "connect-slashes": "^1.4.0",
     "corpora-project": "^0.2.0",
+    "dayjs": "^1.10.4",
     "emoji-unicode": "^2.0.1",
     "es6-promisify": "^6.1.1",
     "express": "^4.17.1",

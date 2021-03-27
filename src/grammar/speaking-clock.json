@@ -1,0 +1,55 @@
+{
+    "origin": [
+        "The time is now #HH#:#MM# #AM#.",
+        "The time is now #hour# #minute# #AMPM#.",
+        "The 'full date' of a date hard-coded into the grammar is #specific date.!&fulldate#",
+        "The locale representation of a date hard-coded into the grammar is #specific date.!&dateToLocaleString#",
+        "The (formatted) time is now #specific date.!&formattedDate#."
+    ],
+    "specific date": [
+        "May 23, 2010",
+        "1/2/2003 4:05 PM"
+    ],
+    "formattedDate": {
+        "_contextAwareType": "date",
+        "method": "format",
+        "format": "{YYYY} MM-DDTHH:mm:ss SSS [Z] A"
+    },
+    "dateToLocaleString": {
+        "_contextAwareType": "date",
+        "method": "toLocaleString"
+    },
+    "fulldate": {
+        "_contextAwareType": "date",
+        "method": "format",
+        "format": "MM dd, YYYY"
+    },
+    "HH": {
+        "_contextAwareType": "date",
+        "method": "HH"
+    },
+    "MM": {
+        "_contextAwareType": "date",
+        "method": "mm"
+    },
+    "mm": {
+        "_contextAwareType": "date",
+        "method": "mm"
+    },
+    "hour": {
+        "_contextAwareType": "date",
+        "method": "hour"
+    },
+    "minute": {
+        "_contextAwareType": "date",
+        "method": "minute"
+    },
+    "AM": {
+        "_contextAwareType": "date",
+        "method": "AM"
+    },
+    "AMPM": {
+        "_contextAwareType": "date",
+        "method": "AMPM"
+    }
+}
