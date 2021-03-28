@@ -2,11 +2,33 @@
     "origin": [
         "The time is now #HH#:#MM# #AM#.",
         "The time is now #hour# #minute# #AMPM#.",
-        "The 'full date' of a date hard-coded into the grammar is #specific date.!&fulldate#",
-        "The locale representation of a date hard-coded into the grammar is #specific date.!&dateToLocaleString#",
-        "The locale representation of a generated date is #generated date.!&dateToLocaleString#",
-        "The (formatted) time is of a date hard-coded into the #specific date.!&formattedDate#."
+        "The 'full date' of a date hard-coded into the grammar is #specific date.!fulldate#",
+        "The locale representation of a date hard-coded into the grammar is #specific date.!dateToLocaleString#",
+        "The locale representation of a generated date is #generated date.!dateToLocaleString#",
+        "The (formatted) time is of a date hard-coded into the #specific date.!formattedDate#."
     ],
+    "morning or evening": {
+        "!::": "switch",
+        "expression": {
+            "!data::": {
+                "!::": "environment",
+                "key": "date"
+            },
+            "!modifier::": {
+                "!::": "date",
+                "method": "hours"
+            }
+        },
+        "select": [
+            {
+                "case": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+                "then": "morning"
+            }, {
+                "case": { "default": true },
+                "then": "afternoon"
+            }
+        ]
+    },
     "specific date": [
         "May 23, 2010",
         "1/2/2003 4:05 PM"

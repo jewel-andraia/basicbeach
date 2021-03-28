@@ -26,7 +26,7 @@
  * The "environment-aware" modifiers also have access to data loaded into the "environment-aware"
  * grammar. When a data loader is specified into a "environment-aware" grammar, the transpiler
  * inserts "reference keys" into the Tracery grammar, which refer to items loaded
- * into the data store. These keys like `!*some data blob!:!some item in that blob!`. 
+ * into the data store. These keys like `!*some data blob:!some item in that blob`. 
  * "environment-aware" modifiers implicitly resolve the reference keys to the corresponding item 
  * in the data store. environment-aware modifiers should (eventually*) output a string.
  * Modifiers may be chained to perform several transformations, which must finally result 
@@ -51,8 +51,8 @@
  *   "origin": "#some number#",
  *   "some number": "#!*some number!.!_transform_some_blob#",
  *   "!*some number!" [
- *     "!*some number!:!*one!",
- *     "!*some number!:!*two!"
+ *     "!*some number:!*one",
+ *     "!*some number:!*two"
  *   ]
  * }
  * 
@@ -82,7 +82,7 @@
  *        "two": { "number": 2 }
  *      },
  *   },
- *   "number times two": "#!*some number.!&getNumber.!&timesTwo",
+ *   "number times two": "#!*some number.!getNumber.!timesTwo",
  *   "getNumber": {
  *      "!::": "jq",
  *      "path": ".number"
@@ -98,14 +98,14 @@
  *   "origin": "#some number times two#",
  *   "some number": "#!*some number!.!_transform_some_blob#",
  *   "!*some number!": [
- *     "!*some number!:!*one!",
- *     "!*some number!:!*two!"
+ *     "!*some number:!*one",
+ *     "!*some number:!*two"
  *   ]
  *   "some number times two": "#!*some number!.!getNumber.!timesTwo"
  * }
  * 
  * with modifiers {
- *   "!_transform_some_blob": a function which looks up data from `some number` and strinigifies it
+ *   "!some_number": a function which looks up data from `some number` and strinigifies it
  *   "!getNumber": a function which takes data and calls the jq module's modifier to apply the path ".bar"
  *   "!timesTwo": a function which takes data and calls the math module's modifier to multiply the value by 2.
  * }
@@ -131,20 +131,14 @@ function environmentFactory(config) {
     return {
         ...config,
         date,
-        dateYear: date.getUTCFullYear(),
-        dateYearOfCentury: date.getUTCFullYear() % 100,
-        dateCentury: Math.floor(date.getUTCFullYear() / 100),
-        dateQuarter: date.getMonth() % 12,
-        dateMonth: date.getMonth(),
-        dateDay: date.getUTCDay(),
-        dateHours: date.getUTCHours(),
-        dateMinutes: date.getUTCMinutes(),
     }
 }
 
 function modifierSlug() {
-    return '!&' + [].slice.call(arguments).map(x => x.replace(/[#\.\s]/, '_')).join('_');
+    return '!' + [].slice.call(arguments).map(x => x.replace(/[#\.\s]/, '_')).join('_');
 }
+
+
 
 
 class DataLookup {
@@ -162,10 +156,10 @@ class DataLookup {
             this._prepareKey(collectionKey, itemKey));
     }
 
-    static dataKeyRE = /^!\*(.+)!:!\*(.+)!$/;
+    static dataKeyRE = /^!\*(.+):!\*(.+)!$/;
 
     _prepareKey = function(collectionKey, itemKey) {
-        return `!*${collectionKey}!:!*${itemKey}!`;
+        return `!*${collectionKey}:!*${itemKey}!`;
     }
 
     _parseKey = function(key) {
@@ -203,48 +197,161 @@ function contextAwareModifierDecorator(environment, data, modifier, key, specifi
     }
 }
 
-async function contextAwareModifierFactory(grammarSource, environment) {
-    const modifiers = {};
-    const data = new DataLookup();
-    for (const [key, specification] of Object.entries(grammarSource)) {
-        const module = modules[specification["!::"]];
-        if (!module) {
+function getDataFunction(specification) {
+    const dataSpecification =
+        specification["!::data"] ||
+        (specification["!::"] && specification) ||
+        {};
+    const dataModule = dataSpecification && modules[dataSpecification["!::"]];
+    return {
+        dataSpecification,
+        dataFunction: dataModule && dataModule.data,
+    };
+}
+
+function getModifierFunction(specification) {
+    const modifierSpecification =
+        specification["!::modifier"] ||
+        (specification["!::"] && specification) ||
+        {};
+    const modifierModule = modifierSpecification && modules[modifierSpecification["!::"]] || DataLookup;
+
+    return {
+        modifierSpecification,
+        modifierFunction: modifierModule && modifierModule.modifier,
+    };
+}
+
+async function evaluateNestedData(environment, obj, keys = []) {
+    if (typeof obj !== "object") {
+        return obj;
+    }
+    const res = Array.isArray(obj) ? [...obj] : {...obj};
+
+    for (const [key, specification] of Object.entries(obj)) {
+        res[key] = await evaluateNestedData(environment, specification, [...keys, key]);
+        // Skip root items to evaluate all the arguments
+        if (!keys) {
             continue;
         }
 
-        if (typeof module.data === "function") {
-            let loadedData = [];
+        const {
+            dataSpecification,
+            dataFunction,
+        } = getDataFunction(specification);
+        if (!dataFunction) {
+            continue;
+        }
+
+        let loadedData = undefined;
+        try {
+            loadedData = await dataFunction(key, dataSpecification, environment);
+        } catch (e) {
+            console.error({
+                "error": `context-aware dfsEvaluateData data: could not load data for ${keys.join(',')}`,
+                specification,
+                e,
+            });
+            loadedData = `((!data::${keys.join(',')}))`;
+        }
+
+        // Immediately modify data 
+        const {
+            modifierSpecification,
+            modifierFunction,
+        } = getModifierFunction(specification);
+        if (typeof modifierFunction === "function") {
             try {
-                loadedData = await module.data(key, specification, environment);
+                // TODO debug: should this be a "if array then map"?
+                loadedData = modifierFunction(
+                    loadedData,
+                    environment,
+                    keys.join(','),
+                    modifierSpecification,
+                );
             } catch (e) {
-                console.error([`context-aware modifier: could not load data for ${key}`, specification, e]);
-								loadedData = `((!${key}))`;
+                console.error({
+                    "error": `context-aware dfsEvaluateData data: could not run modifier on data for ${keys.join(',')}`,
+                    loadedData,
+                    specification,
+                    e,
+                });
             }
-
-            const dataKeys = data.addItems(loadedData, key);
-            const transformModifierName = modifierSlug("transform", key);
-            const indexKey = `!*${key}!`;
-
-            const transformData = typeof module.modifier === "function"
-                ? module.modifier
-                : DataLookup.modifier;
-
-            modifiers[transformModifierName] = contextAwareModifierDecorator(environment, data, transformData, key, specification);
-            grammarSource = {
-                ...grammarSource,
-                [key]: `#${indexKey}.${transformModifierName}#`, // resolve using the default transformer
-                [indexKey]: dataKeys, // so the grammar can resolve using `"#!*theKey.someOtherTransformer#"
-            };
         }
 
-        if (typeof module.modifier === "function") {
-            modifiers[modifierSlug(key)] = contextAwareModifierDecorator(environment, data, module.modifier, key, specification);
-        }
-
-        if (typeof module.preprocess === "function") {
-            grammarSource = await module.preprocess(grammarSource, environment, key, specification);
-        }
+        res[key] = loadedData;
     }
+    return res;
+}
+
+function collectModifiers(grammarSource, environment, data) {
+    const modifiers = {};
+
+    for (const [key, specification] of Object.entries(grammarSource)) {
+        const {
+            modifierSpecification,
+            modifierFunction,
+        } = getModifierFunction(specification);
+
+        modifiers[modifierSlug(key)] = contextAwareModifierDecorator(
+            environment,
+            data,
+            modifierFunction,
+            key,
+            modifierSpecification,
+        );
+    }
+    
+    return modifiers;
+}
+
+async function loadRootData(grammarSource, environment, data) {
+    const res = {
+        ...grammarSource,
+    }
+    for (const [key, specification] of Object.entries(grammarSource)) {
+        const {
+            dataSpecification,
+            dataFunction,
+        } = getDataFunction(specification);
+        if (typeof dataFunction !== "function") {
+            // Tidy up for Tracery
+            if (specification["!::"] || specification["!data::"] || specification["!modifer::"]) {
+                res[key] = [];
+            }
+            continue;
+        }
+        let loadedData = [];
+        try {
+            loadedData = await dataFunction(key, specification, environment);
+        } catch (e) {
+            console.error([`context-aware modifier: could not load data for ${key}`, specification, e]);
+                            loadedData = `((!${key}))`;
+        }
+
+        const dataKeys = data.addItems(loadedData, key);
+        res = {
+            ...res,
+            [key]: `#${indexKey}.${modifierSlug(key)}#`, // grammar can reference #The Original Key# with the default context-aware modifier
+            [`!*${key}`]: dataKeys, // grammar can reference #!*The Original Key.!someOtherContextAwareModifier#
+        };
+    }
+
+    return res;
+}
+
+async function contextAwareModifierFactory(grammarSource, environment) {
+    const data = new DataLookup();
+
+    console.debug("pre evaluateNestedData", grammarSource);
+    grammarSource = await evaluateNestedData(environment, grammarSource);
+    console.debug("post evaluateNestedData", grammarSource);
+
+    const modifiers = collectModifiers(grammarSource, environment, data);
+    console.debug("post collectModifiers", modifiers);
+
+    grammarSource = await loadRootData(grammarSource, environment, data);
+    console.debug("post loadRootData", grammarSource);
 
     return {
         grammarSource, 

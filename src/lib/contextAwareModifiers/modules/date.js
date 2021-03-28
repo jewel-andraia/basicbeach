@@ -15,29 +15,29 @@ function modifier(input, environment, key, specification) {
         case "year":
         case "getFullYear":
         case "getUTCFullYear":
-            return date.getUTCFullYear();
+            return date.getUTCFullYear().toString();
         case "yearOfCentury":
-            return date.getUTCFullYear() % 100;
+            return (date.getUTCFullYear() % 100).toString();
         case "century":
-            return Math.floor(date.getUTCFullYear() / 100);
+            return Math.floor(date.getUTCFullYear() / 100).toString();
         case "quarter":
-            return date.getMonth() % 12;
+            return (date.getMonth() % 12).toString();
         case "MM":
         case "month":
         case "getMonth":
         case "getUTCMonth":
-            return date.getUTCMonth();
+            return date.getUTCMonth().toString();
         case "DD":
         case "day":
         case "getDay":
         case "getUTCDay":
-            return date.getUTCDay();
+            return date.getUTCDay().toString();
         case "HH":
         case "hour":
         case "hours":
         case "getHours":
         case "getUTCHours":
-            return date.getUTCHours();
+            return date.getUTCHours().toString();
         case "AM": 
         case "PM":
         case "AMPM":
@@ -57,7 +57,7 @@ function modifier(input, environment, key, specification) {
         case "minutes":
         case "getMinutes":
         case "getUTCMinutes":
-            return date.getUTCMinutes();
+            return date.getUTCMinutes().toString();
         case "format":
             return dayjs(date).format(specification.format);
         case "toLocaleString":

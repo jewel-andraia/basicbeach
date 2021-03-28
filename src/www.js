@@ -57,14 +57,21 @@ app.get('/tracery/:grammar', async function (req, res) {
 	const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
 
 	console.debug({ reqUrl, grammar });
-	const traceryOutput = await generateTraceryOutput({
-		grammar: grammar || 't21-tracery-readme',
-		seed,
-	});
-	console.debug({ ...traceryOutput });
-	res.render('grammar-output', {
-		...traceryOutput,
-	});
+	try {
+		const traceryOutput = await generateTraceryOutput({
+			grammar: grammar || 't21-tracery-readme',
+			seed,
+		});
+		console.debug({ ...traceryOutput });
+		res.render('grammar-output', {
+			...traceryOutput,
+		});
+	} catch (e) {
+		console.error(e);
+		// TODO: error
+		res.render('grammar-output');
+	}
+
 });
 
 
