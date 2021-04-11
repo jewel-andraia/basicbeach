@@ -180,15 +180,25 @@
   ],
   "the event": [
     "the Moment",
+    "the Moment #shifted#",
     "the moment it all changed",
-    "the moment everything shifted",
+    "the moment everything #shifted#",
     "the war",
     "everything collapsed",
-    "everything changed",
-    "the current era",
+    "everything #shifted  #",
+    "the current era #shifted",
     "what we know now",
     "the Great War",
-    "the Great War of #year#"
+    "the Great War of #year#",
+    "the bombs fell",
+    "the shooting",
+    "the shooting #shifted"
+  ],
+  "shifted": [
+    "began",
+    "started",
+    "stopped",
+    "ended"
   ],
   "year": [
     "#d{3}#",
