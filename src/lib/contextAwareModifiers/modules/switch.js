@@ -1,6 +1,6 @@
-const selectConsequent(specification, expression) {
-    const found = specification.select.find(case => {
-        const select = case.case;
+function selectConsequent(specification, expression) {
+    const found = specification.select.find(x => {
+        const select = x.case;
 
         if (Array.isArray(select)) {
             if (select.includes(expression)) {
@@ -9,10 +9,11 @@ const selectConsequent(specification, expression) {
         } else if (select == expression /* yes not === */) {
             return true;
         }
-    }) || specification.select.find(case => case.default);
+    }) || specification.select.find(x => x.default);
 
     if (!found) {
-        throw new Error(`Could not find select for "${specification.expression}"`);
+        console.debug("switch.selectConsequent", { specification, expression });
+        throw new Error(`Could not find select for "${expression}"`);
     }
 
     return found.then;
@@ -24,7 +25,10 @@ function modifier(input, environment, key, specification) {
 }
 
 async function data(key, specification, environment) {
-    return selectConsequent(specification, specification.expression);
+    const res = selectConsequent(specification, specification.expression);
+    console.debug("switch.data", { key, res })
+    return res;
+
 }
 
 module.exports = {

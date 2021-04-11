@@ -5,9 +5,11 @@
         "The 'full date' of a date hard-coded into the grammar is #specific date.!fulldate#",
         "The locale representation of a date hard-coded into the grammar is #specific date.!dateToLocaleString#",
         "The locale representation of a generated date is #generated date.!dateToLocaleString#",
-        "The (formatted) time is of a date hard-coded into the #specific date.!formattedDate#."
+        "The (formatted) time is of a date hard-coded into the #specific date.!formattedDae#.",
+        "Selection: It is currently #HH#:#MM# in the #morning or evening#."
     ],
     "morning or evening": {
+        "!::data": {
         "!::": "switch",
         "expression": {
             "!data::": {
@@ -21,13 +23,38 @@
         },
         "select": [
             {
-                "case": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+                "case": ["4", "5", "6"], 
+                "then": "early morning"
+            }, {
+                "case": ["7", "8", "9", "10" ],
                 "then": "morning"
             }, {
-                "case": { "default": true },
+                "case": [ "11", "13" ],
+                "then": "midday"
+            }, {
+                "case": [ "12", "14", "15" ],
                 "then": "afternoon"
+            }, {
+                "case": [ "16", "17" ],
+                "then": "late afternoon"
+            }, {
+                "case": [ "18" ],
+                "then": "early evening"
+            }, {
+                "case": [ "19", "20", "21" ],
+                "then": "evening"
+            }, {
+                "case": [ "22" ],
+                "then": "late evening"
+            }, {
+                "case": [ "23", "0", "1", "2", "3" ],
+                "then": "middle of the night"
+            }, {
+                "case": { "default": true },
+                "then": "day"
             }
         ]
+    }
     },
     "specific date": [
         "May 23, 2010",

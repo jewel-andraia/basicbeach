@@ -8,7 +8,7 @@ function data(key, specification, environment) {
 
 function modifier(input, environment, key, specification) {
     const date = input ? new Date(input) : environment.date;
-    console.debug({ key, date, input, environment });
+    console.debug("date.modifier", { key, date, input, environment });
 
     switch (specification.method) {
         case "YYYY":
@@ -59,6 +59,7 @@ function modifier(input, environment, key, specification) {
         case "getUTCMinutes":
             return date.getUTCMinutes().toString();
         case "format":
+        case (typeof specification.format === "string"):
             return dayjs(date).format(specification.format);
         case "toLocaleString":
         default:
