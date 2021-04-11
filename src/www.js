@@ -65,11 +65,14 @@ app.get('/tracery/:grammar', async function (req, res) {
 		console.debug({ ...traceryOutput });
 		res.render('grammar-output', {
 			...traceryOutput,
+			body_classes: 'grammar',
 		});
 	} catch (e) {
 		console.error(e);
 		// TODO: error
-		res.render('grammar-output');
+		res.render('grammar-output', {
+			body_classes: 'grammar error',
+		});
 	}
 
 });
