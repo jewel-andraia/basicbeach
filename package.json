@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/andytuba/basicbeach#readme",
   "dependencies": {
+    "braille": "^1.1.0",
     "connect-slashes": "^1.4.0",
     "corpora-project": "^0.2.0",
     "dayjs": "^1.10.4",

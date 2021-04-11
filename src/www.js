@@ -8,6 +8,7 @@ const tracery = require('tracery-grammar');
 const url = require('url');
 
 const { contextAwareModifierFactory, environmentFactory } = require('./lib/contextAwareModifiers');
+const handlebarsHelpers = require('./lib/handlebars-helpers');
 const projectTraceryModifiers = require('./lib/modifiers');
 const { loadFileNames } = require('./lib/utils');
 
@@ -23,9 +24,7 @@ app.use(addTrailingSlash());
 
 
 app.engine('handlebars', exphbs({
-	helpers: {
-		'deslug': deslug,
-	},
+	helpers: handlebarsHelpers,
 }));
 app.set('view engine', 'handlebars');
 app.set('views', 'src/views/');
@@ -115,8 +114,4 @@ async function generateTraceryOutput(config) {
 			attribution,
 		},
 	};
-}
-
-function deslug(phrase) {
-	return !phrase ? phrase : phrase.replace(/[^\w]/g, ' ');
 }
