@@ -1,17 +1,210 @@
 {
   "_attribution": "https://twitter.com/EveryLoadScreen/",
-	"origin": ["#The weapon is useful#"],
-        "The weapon is useful": ["The #weapon# is #good for something#.", "Try dual-wielding  #weapon#.", "A #weapon# pairs well with a #weapon#.", "Try switching between a #weapon# and #weapon#.", "#enemies.capitalize# are #susceptible# attacks by #weapon#."],
-   "good for something": "#good# for #something#",
-    "good": ["#adj#", "#adj#", "#adj#", "#intensifier# #adj#"],
-     "adj": ["good", "bad", "wretched", "terrible", "superb", "delightful"],
-      "intensifier": ["very", "rather", "quite", "surprisingly", "distressingly", "delightfully", "extremely", "particularly", "peculiarly"],
-  "something": ["#hurting# #enemies#"],
-    "hurting": ["hurting", "bashing", "electrifying", "confusing", "knocking out", "knocking back", "knocking down", "zapping", "confusing", "transforming", "titillating"],
-  "susceptible": ["#_susceptible#","#_susceptible#", "#intensifier# #susceptible#"],
-  "_susceptible": ["susceptible to", "vulnerable to", "weakened by", "strengthened by", "confused by", "overwrought by", "impressed by", "unimpressed by", "amused by", "distressed by"],
-    "enemies": ["enemies", "creatures", "bugs", "combatants"],
-     "weapon": [ "#treated# #_weapon#"],
-     "treated": ["anodized", "hairy", "furry", "dusty", "declawed", "double-headed", "blessed", "cursed", "thrice-forged", "double-barrelled", "sawn-off"],
-      "_weapon":  ["knife", "dagger", "machete", "pistol", "six-shooter", "shotgun", "rifle", "rock", "sling", "rocket launcher", "zap gun", "stick", "prod"]
+  "origin": [
+    "#The weapon is useful#",
+    "#Armor provides protection#",
+    "#Lore#"
+  ],
+  "The weapon is useful": [
+    "The #weapon# is #good for something#.",
+    "Try dual-wielding #weapon#.",
+    "A #weapon# pairs well with a #weapon#.",
+    "Try switching between a #weapon# and #weapon#.",
+    "#enemies.capitalize# are #susceptible# attacks by #weapon#."
+  ],
+  "Armor provides protection": [
+    "#material.capitalize# armor offers #additional# protection against #damage#.",
+    "#material.capitalize# armor offers #good# protection against #damage#."
+  ],
+  "Lore": [
+    "#earlier.capitalize#, #the state of the world#."
+  ],
+  "additional": [
+    "#_additional#",
+    "#_additional#",
+    "#_additional#",
+    "#intensifier# #_additional#"
+  ],
+  "_additional": [
+    "additional",
+    "superior",
+    "weaker",
+    "less"
+  ],
+  "good for something": "#good# for #something#",
+  "good": [
+    "#adj#",
+    "#adj#",
+    "#adj#",
+    "#intensifier# #adj#"
+  ],
+  "adj": [
+    "good",
+    "bad",
+    "wretched",
+    "terrible",
+    "superb",
+    "delightful"
+  ],
+  "intensifier": [
+    "very",
+    "rather",
+    "quite",
+    "surprisingly",
+    "distressingly",
+    "delightfully",
+    "extremely",
+    "particularly",
+    "peculiarly"
+  ],
+  "something": [
+    "#hurting# #enemies#"
+  ],
+  "hurting": [
+    "hurting",
+    "bashing",
+    "electrifying",
+    "confusing",
+    "knocking out",
+    "knocking back",
+    "knocking down",
+    "zapping",
+    "confusing",
+    "transforming",
+    "titillating"
+  ],
+  "susceptible": [
+    "#_susceptible#",
+    "#_susceptible#",
+    "#intensifier# #susceptible#"
+  ],
+  "_susceptible": [
+    "susceptible to",
+    "vulnerable to",
+    "weakened by",
+    "strengthened by",
+    "confused by",
+    "overwrought by",
+    "impressed by",
+    "unimpressed by",
+    "amused by",
+    "distressed by"
+  ],
+  "enemies": [
+    "enemies",
+    "creatures",
+    "bugs",
+    "combatants"
+  ],
+  "weapon": [
+    "#_weapon#",
+    "#treated# #_weapon#",
+    "#treated# #_weapon#"
+  ],
+  "treated": [
+    "anodized",
+    "hairy",
+    "furry",
+    "dusty",
+    "declawed",
+    "double-headed",
+    "blessed",
+    "cursed",
+    "thrice-forged",
+    "double-barrelled",
+    "sawn-off"
+  ],
+  "_weapon": [
+    "knife",
+    "dagger",
+    "machete",
+    "pistol",
+    "six-shooter",
+    "shotgun",
+    "rifle",
+    "rock",
+    "sling",
+    "rocket launcher",
+    "zap gun",
+    "stick",
+    "prod"
+  ],
+  "material": [
+    "leather"
+  ],
+  "damage": [
+    "#_damage# damage",
+    "#_damage# damage",
+    "#_damage# damage",
+    "#_damage# damage",
+    "#_damage# damage",
+    "both #_damage# and #_damage# damage",
+    "#_damage#, but not #_damage# damage",
+    "#_damage# as well as #_damage# damage"
+  ],
+  "_damage": [
+    "electric", "shocking", "biting", "melee",
+    "falling", "poison", "radiation"
+  ],
+  "earlier": [
+    "in the #time range# before #the event#",
+    "during the #time range# before #the event#",
+    "before #the event#"
+  ],
+  "time range": [
+    "#_time range#",
+    "#_time range#",
+    "#_time range#",
+    "#_time range#",
+    "#_time range#",
+    "#many# #_time range#"
+  ],
+  "many": [
+    "few",
+    "many",
+    "meager",
+    "plenty of"
+  ],
+  "_time range": [
+    "hours",
+    "minutes",
+    "seconds",
+    "moments",
+    "days",
+    "weeks",
+    "months",
+    "years",
+    "decades",
+    "epochs",
+    "millenia"
+  ],
+  "the event": [
+    "the Moment",
+    "the moment it all changed",
+    "the moment everything shifted",
+    "the war",
+    "everything collapsed",
+    "everything changed",
+    "the current era",
+    "what we know now",
+    "the Great War",
+    "the Great War of #year#"
+  ],
+  "year": [
+    "#d{3}#",
+    "#d{4}#",
+    "#d{5}#"
+  ],
+  "d{3}": "#d##d0##d0#",
+  "d{4}": "#d##d0##d0##d0#",
+  "d{5}": "#d##d0##d0##d0##d0#",
+  "d": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  "d0": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+
+  "the state of the world": [
+    "there was peace",
+    "there was constant war",
+    "the battlefront laid quiet",
+    "birds sang and bees buzzed"
+  ]
 }
