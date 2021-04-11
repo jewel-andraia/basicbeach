@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const addTrailingSlash = require('connect-slashes');
-const fs = require('fs');
 const nodescad = require('nodescad');
 const path = require('path');
 const seedrandom = require('seedrandom');
@@ -10,6 +9,7 @@ const url = require('url');
 
 const { contextAwareModifierFactory, environmentFactory } = require('./lib/contextAwareModifiers');
 const projectTraceryModifiers = require('./lib/modifiers');
+const { loadFileNames } = require('./lib/utils');
 
 
 const hostname = '127.0.0.1';
@@ -31,22 +31,19 @@ app.set('view engine', 'handlebars');
 app.set('views', 'src/views/');
 
 app.get('/tracery', function (req, res) {
-	new Promise((resolve, reject) => {
-		fs.readdir(grammarDir, function (err, files) {
-			if (err) {
-				reject(err);
-			}
-
-			const grammars = Array.from(new Set(files.map(x => x.split('.')[0])))
-				.filter(x => x[0] !== '_')
-				.filter(x => x);
-
-			resolve(grammars);
-		});
-	}).then(grammars => {
+	loadFileNames(grammarDir).then(grammars => {
 		res.render('index', {
 			grammars,
+			body_classes: 'index',
 		});
+	});
+});
+
+app.get('/tracery/random', function (req, res) {
+	loadFileNames(grammarDir).then(grammars => {
+		const grammar = grammars[Math.floor(Math.random() * grammars.length)];
+		res.set('location', `/tracery/${grammar}/`);
+		res.status(301).send();
 	});
 });
 
