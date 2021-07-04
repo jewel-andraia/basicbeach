@@ -76,9 +76,9 @@
 
     "commit action": [
         "#wear# #clothes#",
-        "#wear# #clothes# in a #mood# style",
-        "#wear# #clothes# in a #mood# fashion",
-        "#wear# #clothes# in a #mood# manner",
+        "#wear# #clothes# in #mood.a# style",
+        "#wear# #clothes# in #mood.a# fashion",
+        "#wear# #clothes# in #mood.a# manner",
         "#wear# #clothes# with #clothes#",
         "carry #object.a# in your #pocket#",
         "carry #object.a# in your #pocket# alongside #object.a#",
