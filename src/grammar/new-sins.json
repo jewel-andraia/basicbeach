@@ -30,7 +30,7 @@
     "1-12": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "12"],
     "day of week": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"],
-    "relative time": ["beginning", "early", "middling", "late", "final", "penultimate", "ultimate"],
+    "relative time": ["beginning", "early", "middling", "late", "final", "penultimate part", "ultimate part", "ending", "conclusion"],
     "part of day": ["morning", "afternoon", "evening", "night"],
     "time of day": [
         "#1st-12th# hour of the morning",
