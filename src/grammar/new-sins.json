@@ -1,0 +1,146 @@
+{
+    "origin": [
+        "When you #commit action# #recurrance#, you have committed #sin#.",
+        "When you #commit action#, you have committed #sin#.",
+        "#sin.capitalize#: #committing action#",
+        "#sin.capitalize#: #committing action# #recurrance#"
+        
+    ],
+    "_attribution": "https://twitter.com/hologramvin/status/1411510962297974784",
+    "recurrance": [
+        "#recurring day#",
+        "during the #time of day#",
+        "during the #time of day# #recurring day#"
+    ],
+    "recurring day": [
+        "on #day of week.s#",
+        "on the #1st-5th# #day of week# of #month#",
+        "on the #1st-31st# day of #month#",
+        "on the #1st-31st# of #month#",
+        "in #month#"
+
+    ],
+    "1st-5th": "#1-5.ordinal#",
+    "1-5": ["1", "2", "3", "4", "5"],
+    "6st-12th": "#6-12.ordinal#",
+    "6-12": ["6", "7", "8", "9", "10", "11", "12"],
+    "1st-31st": "#1-31.ordinal#",
+    "1-31": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
+    "1st-12th": "#1-12.ordinal#",
+    "1-12": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "12"],
+    "day of week": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"],
+    "relative time": ["beginning", "early", "middling", "late", "final", "penultimate", "ultimate"],
+    "part of day": ["morning", "afternoon", "evening", "night"],
+    "time of day": [
+        "#1st-12th# hour of the morning",
+        "#1st-5th# hour of the afternoon",
+        "#6st-12th# hour of the evening",
+        "#relative time# hours of the #part of day#",
+        "#relative time# of #part of day#",
+        "#relative time# part of #part of day#",
+        "#part of day#"
+    ],
+
+    "sin": [
+        "#_sin#",
+        "the sin of #_sin#",
+        "the malady of #_sin#"
+    ],
+    "_sin": [
+        "#_sin-prefix##_sin-infix##_sin-suffix#",
+        "#_sin-prefix##_sin-infix##vowel##_sin-infix##_sin-suffix#"
+    ],
+    "_sin-prefix": [
+        "gh#vowel#",
+        "h#vowel#",
+        "k#vowel#",
+        "b#vowel#",
+        "#vowel#"
+    ],
+    "_sin-infix": [
+        "",
+        "bl",
+        "k",
+        "m",
+        "n",
+        "mn"
+    ],
+    "_sin-suffix": [
+        "#vowel#py",
+        "#vowel#td#vowel#n",
+        "#vowel#rv#vowel#n"
+    ],
+
+    "vowel": ["a", "e", "o", "i", "u", "ae", "æ", "œ"],
+
+    "commit action": [
+        "#wear# #clothes#",
+        "#wear# #clothes# in a #mood# style",
+        "#wear# #clothes# in a #mood# fashion",
+        "#wear# #clothes# in a #mood# manner",
+        "#wear# #clothes# with #clothes#",
+        "carry #object.a# in your #pocket#",
+        "carry #object.a# in your #pocket# alongside #object.a#",
+        "carry #object.a# and #object.a# in your #pocket#",
+        "#behave# in a #mood# manner"
+    ],
+    "committing action": [
+        "#wearing# #clothes#",
+        "#wearing# #clothes# in a #mood# style",
+        "#wearing# #clothes# in a #mood# fashion",
+        "#wearing# #clothes# in a #mood# manner",
+        "#wearing# #clothes# with #clothes#",
+        "#carrying# #object.a# in your #pocket#",
+        "#carrying# #object.a# in your #pocket# alongside #object.a#",
+        "#carrying# #object.a# and #object.a# in your #pocket#",
+        "#behaving# in a #mood# manner"
+    ],
+    "behave": [
+        "behave",
+        "speak",
+        "comport yourself"
+    ],
+    "behaving": [
+        "behaving",
+        "speaking",
+        "comporting yourself"
+    ],
+    "wear": [
+        "wear",
+        "don"
+    ],
+    "wearing": ["#wear#ing"],
+    "carry": [
+        "carry",
+        "place",
+        "put",
+        "keep"
+    ],
+    "carrying": ["carrying", "placing", "putting", "keeping"],
+    "clothes": ["#clothing.es#", "mismatched #clothing.es#"],
+	"clothing": {
+		"!::": "corpora",
+		"path": ["objects", "clothing", "clothes"]
+	},
+	"object": {
+		"!::": "corpora",
+		"path": ["objects", "objects"]
+	},
+    "pocket": [
+        "pocket",
+        "pocketbook",
+        "purse",
+        "pockets",
+        "bag",
+        "backpack",
+        "saddlebag",
+        "handbag",
+        "personal effects",
+        "trunk"
+    ],
+	"mood": {
+		"!::": "corpora",
+		"path": ["humans", "moods"]
+	}
+}
