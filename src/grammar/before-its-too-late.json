@@ -1,0 +1,103 @@
+
+{
+	"origin": ["#[setPronoun][setName]origins#"],
+	"origins": ["#[name:#first name#][setPronoun]origin-1#"],
+	"_attribution": [
+        "https://twitter.com/keithkurson/status/1403517609706881026"
+	],
+	"setName": [
+	  "[name:#first name#]",
+		"[name:#surname#]"
+	],
+	"setPronoun": [
+		"[pronoun:he][direct target pronoun:him][possessive_pronoun:his]",
+		"[pronoun:she][direct target pronoun:her][possessive_pronoun:she]",
+		"[pronoun:they][direct target pronoun:them][possessive_pronoun:they]"
+	],
+	"origin-1": "#name.capitalize#, use your #company# offer from #store# before it's too late!",
+	"name": ["#surname#", "#nombre#", "#name#", "#name#", "#nombre#"],
+	"is": ["is", "works as"],
+	"pronoun": "they",
+	"possessive name": "their",
+  "first name": {
+		"!::": "corpora",
+		"path": ["humans", "firstNames"]
+  },
+  "nombre": {
+		"!::": "corpora",
+		"path": ["humans", "spanishFirstNames"]
+  },
+	"surname": {
+		"!::": "corpora",
+		"path": ["humans", "authors"]
+  },
+	"company": ["#fortune 500#"],
+	"fortune 500": {
+		"!::": "corpora",
+		"path": ["corporations", "fortune500", "companies"]
+	},
+
+
+
+
+
+
+	"origin-2": "Scene: #central california#. The #july# #sun# #reflects# off the #windshield# of a #station wagon# driven by a #woman# #whose water broke# #hours ago#. #three.capitalize# #small children# #scream# in #the backseat#, but none of them will #be your speaker# #today#. Your speaker is about #to be born#.",
+
+	"central california": ["#region#", "the #section# of #region#"],
+	"july": ["#month#", "#season#"],
+	"season": ["summer", "winter", "spring", "fall"],
+	"month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+	"sun": ["sun", "sunshine", "moonlight", "glare"],
+	"reflects": ["reflects", "sunshines", "glints"],
+	"windshield": ["windshield", "window", "front window", "glass"],
+	"woman": ["woman", "man", "person"],
+	"whose water broke": ["whose water broke", "who realized it was almost too late", "who felt the rumbling"],
+	"hours ago": ["hours ago", "a moment ago", "just now", "#number# miles ago", "#number# minutes ago"],
+	"number": ["#digit#", "#digit##digit_incl_0#"],
+	"digit": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+	"digit_incl_0": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+	"three": ["two", "three", "four", "five", "six", "half a dozen", "two too many", "three too many"],
+	"small children": ["#_small children#", "#_small children#" ,"#_small children#", "#_small children# and a #pet#"],
+	"_small children": ["small children", "babies", "kids", "young'ns", "small fries", "human beans"],
+	"pet": ["cat", "bird", "dog", "kitten", "puppy", "gremlin"],
+	"station wagon": "#RV#",
+	"the backseat": ["the backseat", "the back"],
+	"section": ["back roads", "winding hills", "fields", "alleyways"],
+	"region": ["#us state#", "#country#", "#english town#"],
+	"us state": ["Central California", "Los Angeles", "Kentucky", "Pennsylvania"],
+	"country": {
+		"!::": "corpora",
+		"path": ["geography", "countries"]
+	},
+	"english town": {
+		"!::": "corpora",
+		"path": ["geographies", "english_towns_cities", "towns"]
+	},
+	"scream": ["scream", "yell", "cheer", "fuss", "fight", "squabble"],
+	"be your speaker": ["be your speaker", "present to you", "share words with you", "speak"],
+	"today": ["today", "tonight", "this morning", "this afternoon", "#during# #this time period's# #event#"],
+	"during": ["during", "at", "for"],
+	"this time period's": ["this", "today's", "tonight's", "upcoming", "the next"],
+	"event": ["conference", "talk", "event", "session"],
+	"to be born": ["to be born", "to emerge into the world", "to emerge from the womb", "to see the light of day"],
+
+	"origin-3": "#One time# my #grandpa# #took a hard corner# in #his# #RV# and a #can# of #cream corn# flew out of a #cabinet# and #hit# me in #the head#. I #think# that's when I got my #personality#.",
+
+	"One time": ["One time", "Once", "Many moons ago", "May years ago", "A few years ago", "A few years back", "A long time ago"],
+	"grandpa": ["grandpa", "grandma", "grandfather", "grandmother", "gramps", "papa", "cousin", "brother", "sister", "sibling", "parent", "father", "mother", "boyfriend", "lovefriend"],
+	"took a hard corner": ["took a hard corner"],
+	"his": ["his", "her", "their"], 
+	"RV": ["RV", "VW", "Beetle", "Ford", "pickup", "station wagon", "woodie"],
+	"cabinet": ["cabinet", "glove box", "sack", "tote", "tote bag", "shopping bag"],
+	"can": ["can", "tin", "box", "carton", "loose piece"],
+	"cream corn": ["cream corn", "condensed milk", "corn", "peas", "shallots"],
+	"hit": ["hit", "bonked", "conked", "pegged"],
+	"the head": ["#my# head", "#my# collarbone", "#my# skull", "#my# #right#ear", "#my# #right##eyebrow"],
+	"right": ["left ", "right ", ""],
+	"my": ["the", "my"],
+	"think": ["think", "bet", "suspect", "pretend"],
+	"personality": ["personality", "#positive# sense of #fashion#"],
+	"positive": ["stunning", "glowing", "impeccable", "ludicrous", "wild", "zany"],
+	"fashion": ["fashion", "humor"]
+}

@@ -1,11 +1,21 @@
 {
-    "origin": "#Name.replaceInitial(J)#",
+    "origin": "#Name.replaceInitialConsonant(J)#",
+    "_attribution": "https://twitter.com/LucySuddenly/status/1411750683364102145",
     "Name": [
         "Samwise Gamgee",
-        "#famousDuos#"
+        "#famousDuos#",
+        "#famousDuoFirst# #famousDuoSecond#"
     ],
 	"famousDuos": {
 		"!::": "corpora",
 		"path": ["humans", "famousDuos"]
+	},
+	"famousDuoFirst": {
+		"!::": "corpora",
+		"path": ["humans", "famousDuos", "first"]
+	},
+	"famousDuoSecond": {
+		"!::": "corpora",
+		"path": ["humans", "famousDuos", "second"]
 	}
 }
