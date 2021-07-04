@@ -1,0 +1,11 @@
+{
+    "origin": "#Name.replaceInitial(J)#",
+    "Name": [
+        "Samwise Gamgee",
+        "#famousDuos#"
+    ],
+	"famousDuos": {
+		"!::": "corpora",
+		"path": ["humans", "famousDuos"]
+	}
+}

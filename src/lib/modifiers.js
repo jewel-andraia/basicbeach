@@ -39,3 +39,6 @@ const ordinal = exports.ordinal = function(s) {
 	};
 };
 
+const replaceInitial = exports.replaceInitial = function(s, [replacer]) {
+	return s.replace(/\b[A-Z](\w+)\b/g, `${replacer}$1`); 	
+};
