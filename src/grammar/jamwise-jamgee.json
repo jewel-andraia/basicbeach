@@ -4,8 +4,25 @@
     "Name": [
         "Samwise Gamgee",
         "#famousDuos#",
-        "#famousDuoFirst# #famousDuoSecond#"
+        "#famousDuoFirst# #famousDuoSecond#",
+        "#celebrities#",
+        "#scientists#",
+        "#firstNames# #lastNames#",
+        "#firstNames# #firstNames# #lastNames#",
+        "#firstNames# #firstNames# #lastNames# #lastNames#"
     ],
+	"celebrities": {
+		"!::": "corpora",
+		"path": ["humans", "celebrities"]
+	},
+	"firstNames": {
+		"!::": "corpora",
+		"path": ["humans", "firstNames"]
+	},
+	"lastNames": {
+		"!::": "corpora",
+		"path": ["humans", "lastNames"]
+	},
 	"famousDuos": {
 		"!::": "corpora",
 		"path": ["humans", "famousDuos"]
@@ -17,5 +34,9 @@
 	"famousDuoSecond": {
 		"!::": "corpora",
 		"path": ["humans", "famousDuos", "second"]
+	},
+	"scientists": {
+		"!::": "corpora",
+		"path": ["humans", "scientists"]
 	}
 }
