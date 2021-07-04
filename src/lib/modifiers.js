@@ -46,3 +46,16 @@ const replaceInitial = exports.replaceInitial = function(s, [replacer]) {
 const replaceInitialConsonant = exports.replaceInitialConsonant = function(s, [replacer]) {
 	return s.replace(/\b[BCDFGHJKLMNPQRSTVWXZ](\w+)\b/g, `${replacer}$1`); 	
 };
+
+const ing = exports.ing = function(s) {
+	// gerund
+	return s + 'ing';
+}
+
+const es = exports.es = function(s) {
+	if (s.endsWith('s')) {
+		return s;
+	} else {
+		return `${s}s`;
+	}
+}
