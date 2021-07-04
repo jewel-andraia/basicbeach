@@ -59,3 +59,7 @@ const es = exports.es = function(s) {
 		return `${s}s`;
 	}
 }
+
+const lowercase = exports.lowercase = function(s) {
+	return s.toLowerCase();
+}
