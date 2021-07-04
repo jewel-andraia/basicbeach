@@ -2,7 +2,10 @@
     "origin": [
         "When you #commit action# #recurrance#, you have committed #sin#.",
         "When you #commit action#, you have committed #sin#.",
+        "When you #commit action# then #commit action#, you have committed #sin#.",
         "#sin.capitalize#: #committing action#",
+        "#sin.capitalize#: #committing action# after #committing action#",
+        "#sin.capitalize#: #committing action#, then #immediately# #committing action#",
         "#sin.capitalize#: #committing action# #recurrance#"
         
     ],
@@ -30,6 +33,7 @@
     "1-12": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "11", "12"],
     "day of week": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "month": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"],
+    "immediately": ["immediately", "eventually", "subsequently", "simultaneously"],
     "relative time": ["beginning", "early", "middling", "late", "final", "penultimate part", "ultimate part", "ending", "conclusion"],
     "part of day": ["morning", "afternoon", "evening", "night"],
     "time of day": [
@@ -83,7 +87,12 @@
         "carry #object.a# in your #pocket#",
         "carry #object.a# in your #pocket# alongside #object.a#",
         "carry #object.a# and #object.a# in your #pocket#",
-        "#behave# in a #mood# manner"
+        "#behave# in a #mood# manner",
+        "smell #scent# and #scent#",
+        "smell #scent# and #scent#",
+        "smell #scent# and #scent# (#especially# with different nostrils)",
+        "smell #scent# and #scent# (#especially# with the same nostrils)",
+        "smell #scent# and #scent# (#especially# with the same nostril)"
     ],
     "committing action": [
         "#wearing# #clothes#",
@@ -94,8 +103,14 @@
         "#carrying# #object.a# in your #pocket#",
         "#carrying# #object.a# in your #pocket# alongside #object.a#",
         "#carrying# #object.a# and #object.a# in your #pocket#",
-        "#behaving# in a #mood# manner"
+        "#behaving# in a #mood# manner",
+        "smelling #scent# and #scent#",
+        "smelling #scent# and #scent#",
+        "smelling #scent# and #scent#, #especially# with different nostrils",
+        "smelling #scent# and #scent#, #especially# with the same nostrils",
+        "smelling #scent# and #scent#, #especially# with the same nostril"
     ],
+    "especially": ["especially", "particularly", "peculiarly"],
     "behave": [
         "behave",
         "speak",
@@ -142,5 +157,26 @@
 	"mood": {
 		"!::": "corpora",
 		"path": ["humans", "moods"]
-	}
+	},
+    "scent": [
+        "#herb#",
+        "#spice#",
+        "#spice blend#"
+    ],
+
+    "herb": "#_herb.lowercase#",
+    "_herb": {
+        "!::": "corpora",
+        "path": ["foods", "herbs_n_spices", "herbs"]
+    },
+    "spice": "#_spice.lowercase#",
+    "_spice": {
+        "!::": "corpora",
+        "path": ["foods", "herbs_n_spices", "spices"]
+    },
+    "spice blend": "#_spice blend.lowercase#",
+    "_spice blend": {
+        "!::": "corpora",
+        "path": ["foods", "herbs_n_spices", "mixtures"]
+    }
 }
