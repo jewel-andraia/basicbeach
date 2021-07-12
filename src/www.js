@@ -15,6 +15,7 @@ const { loadFileNames } = require('./lib/utils');
 
 const hostname = '127.0.0.1';
 const port = 3000;
+const rootPath = "/tracery/" 
 const grammarDir = path.join(__dirname, 'grammar');
 
 var app = express();
@@ -74,7 +75,7 @@ app.get('/tracery/:grammar', async function (req, res) {
 });
 
 
-console.log(`Starting server at http://${hostname}:${port}/`);
+console.log(`Starting server at http://${hostname}:${port}${rootPath}`);
 app.listen(port);
 
 async function generateTraceryOutput(config) {
