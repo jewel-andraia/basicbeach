@@ -1,0 +1,40 @@
+{
+    "_attribution": "https://twitter.com/marlenac/status/1412105166975737864",
+    "origin": "#event# #signup#",
+    "event": [
+        "There are three *zine workshop* dates: can you join on #zine date#?", 
+        "Conference attendees will receive zines from the July workshops in August!",
+        "Talk videos will be available starting #conference start date#.",
+        "You can join live watch parties for #conference talks# during the week of #conference start date#.",
+        "Wavelength Conf will host #speaker panels# #panel days#."
+    ],
+    "zine date": ["July 17", "July 24", "July 31"],
+    "conference start date": [
+        "Monday, September 6th",
+        "the first Monday of September",
+        "Sept 6 (Labor Day in the US)",
+        "9/16/2021"
+    ],
+    "signup": [
+        "Get your tickets today! #link#",
+        "Join the fun at #link#",
+        "Attend the conference: #link#"
+    ],
+    "conference talks": [
+        "talks",
+        "conference talks",
+        "Wavelength talks",
+        "chatting and watching the talks"
+    ],
+    "speaker panels": [
+        "live panels",
+        "live panels with the speakers",
+        "live panels with your fav speakers"
+    ],
+    "panel days": [
+        "starting Thursday after Labor Day (Sept 6)",
+        "Thursday-Saturday September 9 through 11",
+        "Thursday September 9th -- Saturday September 11th"
+    ],
+    "link": "[wavelengthconf.com](https://wavelengthconf.com)"
+}
