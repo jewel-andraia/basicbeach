@@ -7,6 +7,7 @@ const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
 const url = require('url');
 
+const brackets = require('./lib/brackets');
 const { contextAwareModifierFactory, environmentFactory } = require('./lib/contextAwareModifiers');
 const handlebarsHelpers = require('./lib/handlebars-helpers');
 const projectTraceryModifiers = require('./lib/modifiers');
@@ -102,7 +103,22 @@ async function generateTraceryOutput(config) {
 	grammar.addModifiers(projectTraceryModifiers);
 	grammar.addModifiers(caw.modifiers);
 
-	const text = grammar.flatten('#origin#');
+	const output = grammar.flatten('#origin#');
+	const text = brackets.removeBrackets(output);
+	const images = brackets.matchBrackets(output).map(match => {
+		match = match.replace(/\\{/g, "{").replace(/\\}/g, "}");
+
+		if (match.startsWith('{svg ')) {
+			return match.substr(5, match.length - 6);
+		} else if (match.startsWith('{img ')) {
+			return `<img src="${match.substr(5, match.length - 6)}" />`;
+		}
+
+		const error = new Error("Could not find filter");
+		error.value = match;
+		throw error;
+	});
+
 	let attribution = grammar.flatten('#_attribution#');
 	if (attribution === '((_attribution))') {
 		attribution = void 0;
@@ -112,6 +128,7 @@ async function generateTraceryOutput(config) {
 		config,
 		output: {
 			text,
+			images,
 			attribution,
 		},
 	};
