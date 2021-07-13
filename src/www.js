@@ -103,9 +103,11 @@ async function generateTraceryOutput(config) {
 	grammar.addModifiers(projectTraceryModifiers);
 	grammar.addModifiers(caw.modifiers);
 
-	const output = grammar.flatten('#origin#');
-	const text = brackets.removeBrackets(output);
-	const images = brackets.matchBrackets(output).map(match => {
+	const origin = grammar.flatten('#origin#');
+	const text = brackets.removeBrackets(origin);
+
+	const imageTags = brackets.matchBrackets(origin);
+	const images = imageTags && imageTags.map(match => {
 		match = match.replace(/\\{/g, "{").replace(/\\}/g, "}");
 
 		if (match.startsWith('{svg ')) {

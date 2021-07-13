@@ -7,10 +7,14 @@
 <h1>
     <a tabindex="1" href="./"><span class="text">{{deslug config.grammar}}</span></a>
 </h1>
-<content tabindex="2">{{output.text}}</content>
-{{#output.images}}
-    {{{this}}}
-{{/output.images}}
+<section tabindex="2">{{output.text}}</section>
+{{#if output.images}}
+    <section class="images">
+        {{#output.images}}
+            {{{this}}}
+        {{/output.images}}
+    </section>
+{{/if}}
 <footer>
 {{#if output.attribution}}
 <p>inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
