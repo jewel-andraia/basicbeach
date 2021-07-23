@@ -1,0 +1,43 @@
+{
+    "_attribution": "https://twitter.com/mattstratton/status/1418569346805342219?",
+    "origin": [
+        "#salutations.capitalize# #I appreciate you# #emoji#"
+    ],
+    "salutations": [
+        "#happy birthday#, #TheKaterTot#!",
+         "#TheKaterTot#, #happy birthday#!"
+    },
+    "happy birthday": [
+        "Happy birthday",
+        "Cheers"
+        "what a great day",
+        "congrats on another year of being you",
+        "let's boogie down"
+    ],
+    "emoji": [
+        "🎂",
+        "🧁",
+        "🍰",
+        "🕯️🕯️🕯️",
+        "🙌",
+        "🎉",
+        "🥂",
+        "🎈",
+        "🍾"
+    ],
+    "TheKaterTot": ["TheKaterTot", "@TheKaterTot", "Kate"],
+    "I appreciate you": [
+        "#You're awesome!#",
+        "I #admire# how you #accomplishment#!"
+    ],
+    "You're awesome!": [
+        "Talking to you is always a delight!",
+        "You're a #pastry# of #joy#"
+    ],
+    "admire": ["admire", "appreciate", "love", "think it's it's so good"],
+    "accomplishment": [
+        "see the world and smile back at it",
+        "conscientiously put out the sweetest vibes"
+        "remind yourself and everyone else how great we all are individually and together"
+    ]
+}
