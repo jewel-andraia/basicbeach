@@ -32,12 +32,23 @@
     ],
     "You're awesome!": [
         "Talking to you is always a delight!",
-        "You're a #pastry# of #joy#"
+        "You're a #pastry# of #joy#!",
+        "You're the coolest little sister!"
     ],
+    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat"
+    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness"], 
     "admire": ["admire", "appreciate", "love", "think it's it's so good"],
     "accomplishment": [
         "see the world and smile back at it",
+        "bring your cute rambunctious puppies out to play",
+        "share your wonderful smile",
         "conscientiously put out the sweetest vibes"
-        "remind yourself and everyone else how great we all are individually and together"
+        "remind yourself and everyone else how great we all are individually and together",
+        "take the hard knocks and keep on rolling",
+        "paint out your feelings and celebrate that expression",
+        "pass on your hard-won knowledge",
+        "take the ladder you climbed, add some rungs, and bring it out to the sidewalk with a sign that says 'I'll foot this for folks who could use a hand'",
+        "take on challenges and figure out how to get them done with your unique strengths and partnering with teams, and maybe not a budget",
+        "take those opportunities to put the shine on your peoples" 
     ]
 }
