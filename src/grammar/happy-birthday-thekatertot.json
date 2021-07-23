@@ -41,8 +41,12 @@
         "You're the coolest little sister!",
 "", ""
     ],
-    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit", "bouquet", "tipsy greeting card", "jelly bean", "chicken nugget", "breaded filet", "fried plantain", "lovable scamp", "sweet yam", "waffle fries"],
-    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion", "shining light", "sparkles", "growth", "glitter"], 
+    "pastry": [
+"unexpected care package", "surprise delivery", "honey biscuit",  "'it has pockets!'",
+
+"cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit", "bouquet", "tipsy greeting card", "jelly bean", "chicken nugget", "breaded filet", "fried plantain", "lovable scamp", "sweet yam", "waffle fries"],
+  
+  "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion", "shining light", "sparkles", "growth", "glitter"], 
     "admire": ["admire", "appreciate", "love", "adore", "think it's it's so good"],
     "accomplishment": [
         "style the best 👓",
