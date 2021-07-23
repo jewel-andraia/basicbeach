@@ -27,7 +27,8 @@
         "🎉",
         "🥂",
         "🎈",
-        "🍾"
+        "🍾",
+        "🥔", "🍠"
     ],
     "TheKaterTot": ["TheKaterTot", "@TheKaterTot", "Kate"],
     "I appreciate you": [
@@ -37,10 +38,11 @@
     "You're awesome!": [
         "Talking to you is always a delight!",
         "You're a #pastry# of #joy#!",
-        "You're the coolest little sister!"
+        "You're the coolest little sister!",
+"", ""
     ],
-    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit", "bouquet", "tipsy greeting card", "jelly bean", "chicken nugget", "breaded filet", "fried plantain"],
-    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion", "shining light", "sparkles"], 
+    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit", "bouquet", "tipsy greeting card", "jelly bean", "chicken nugget", "breaded filet", "fried plantain", "lovable scamp", "sweet yam", "waffle fries"],
+    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion", "shining light", "sparkles", "growth", "glitter"], 
     "admire": ["admire", "appreciate", "love", "adore", "think it's it's so good"],
     "accomplishment": [
         "style the best 👓",
