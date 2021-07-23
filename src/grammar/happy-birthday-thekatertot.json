@@ -39,10 +39,11 @@
         "You're a #pastry# of #joy#!",
         "You're the coolest little sister!"
     ],
-    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit"],
-    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion"], 
-    "admire": ["admire", "appreciate", "love", "think it's it's so good"],
+    "pastry": ["cupcake", "nugget", "black forest cake", "Turkish delight", "pain au chocolat", "sweet treat", "spirit", "bouquet", "tipsy greeting card", "jelly bean", "chicken nugget", "breaded filet", "fried plantain"],
+    "joy": ["joy", "delight", "sweetness", "cuteness", "cheer", "sincerity", "wonderfulness", "confusion", "shining light", "sparkles"], 
+    "admire": ["admire", "appreciate", "love", "adore", "think it's it's so good"],
     "accomplishment": [
+        "style the best 👓",
         "embrace yourself as a whole-ass human tot",
         "lean into the difficulties that life brings and keep processing through them",
         "see the world and smile back at it",
