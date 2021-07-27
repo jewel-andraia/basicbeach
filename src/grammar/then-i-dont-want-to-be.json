@@ -1,0 +1,22 @@
+{ 
+   "_attribution": "https://twitter.com/EthanAGreene/status/1419686326379634692",
+"origin": "#line 1# #line 1b#\n#line 2# #line 2b# #image#",
+"line 1": "if #liking# things is",
+"line 1b": "#cringe#",
+"line 2": "then i don't wanna be",
+"line 2b": "#based#",
+"liking": ["#verb.ing#"],
+"verb": {
+	"!::": "corpora",
+   "path": ["words", "infinitive_verbs"]
+},
+"things": ["things"],
+"cringe": ["cringe"],
+"based": ["based"],
+"img": [
+   "https://cms-assets.tutsplus.com/uploads/users/187/posts/20695/image/stitchstep1.jpg"
+],
+"image": [
+   "{svg <svg width=\"900\" height=\"900\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><image xlink:href=\"#img#\" height=\"900\" width=\"900\"/><text x=\"300\" y=\"300\" textlength=\"350\" style=\"font: 30px courier\" fill=\"blue\" stroke=\"black\">#line 1#</text><text x=\"400\" y=\"380\" style=\"font: bold 50px cursive\" fill=\"orange\" stroke=\"black\">#line 1b#</text><text x=\"200\" y=\"450\" textlength=\"500\" style=\"font: 30px courier\" fill=\"blue\" stroke=\"black\">#line 2#</text><text x=\"370\" y=\"520\" textlength=\"200\" style=\"font: bold 50px cursive\" fill=\"blue\" stroke=\"black\">#line 2b#</text></svg>}"
+]
+}
