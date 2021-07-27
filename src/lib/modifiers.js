@@ -49,7 +49,7 @@ const replaceInitialConsonant = exports.replaceInitialConsonant = function(s, [r
 
 const ing = exports.ing = function(s) {
 	// gerund
-	return s + 'ing';
+	return s.replace(/e?$/, 'ing');
 }
 
 const es = exports.es = function(s) {
