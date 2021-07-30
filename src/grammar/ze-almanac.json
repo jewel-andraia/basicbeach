@@ -1,0 +1,48 @@
+{ 
+   "_attribution": "https://twitter.com/caraesten/status/1414461666956173313",
+"origin": "#[#set image#][#set title#][#set author#]_origin#",
+"_origin": "#text# #image#",
+"text": "#line1# #line2# - #author# ",
+"image": [
+   "{svg <svg width=\"840\" height=\"1200\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">#backdrop##cover art##cover text#</svg>}"
+],
+
+"backdrop": "<rect stroke=\"white\" stroke-width=\"10\" stroke-linecap=\"round\" width=\"100%\" height=\"100%\" fill=\"#color#\" />",
+"cover art": "<image height=\"1082\" width=\"720\" x=\"66\" y=\"66\" xlink:href=\"https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/old_farmers_almanac_cover.jpg?itok=1dgCQvTj\" />",
+"cover text": "#title oval##portrait oval##portrait oval 2##cover title 1##cover title 2##cover author#",
+"cover title 1": "#cover title 1 curve#<text style=\"font: bold 60px serif\" width=\"300\" fill=\"black\" ><textPath method=\"stretch\" startOffset=\"12%\" alignment-baseline=\"top\" xlink:href=\"\\#line1Curve\">#line1.capitalizeAll#</textpath></text>",
+"cover title 2": "#cover title 2 curve#<text style=\"font: bold 60px serif\" width=\"300\" fill=\"black\" ><textPath method=\"stretch\"  startOffset=\"12%\" alignment-baseline=\"bottom\" xlink:href=\"\\#line2Curve\">#line2.capitalizeAll#</textpath></text>",
+"cover title 1 curve": "<path id=\"line1Curve\" fill=\"transparent\" d=\"M250,600 c0,-50 340,-50 340,0\" />",
+"cover title 2 curve": "<path id=\"line2Curve\" fill=\"transparent\" d=\"M250,620 c0,50 340,50 340,0\" />",
+"cover author curve": "<path id=\"authorCurve\" fill=\"transparent\" d=\"M250,700 c0,100 340,100 340,0\" />",
+"cover author": "#cover author curve#<text x=\"170\" style=\"font: bold 30px serif\" fill=\"black\"><textPath method=\"stretch\" textLength=\"25%\" startOffset=\"-15%\" alignment-baseline=\"top\" xlink:href=\"\\#authorCurve\">by #author#</textpath></text>",
+
+"title oval": "<ellipse cx=\"50%\" cy=\"600\" rx=\"190\" ry=\"190\" fill=\"lemonchiffon\" fill-opacity=\".98\"/>",
+"portrait oval": "<ellipse cx=\"200\" cy=\"590\" rx=\"50\" ry=\"60\" fill=\"lemonchiffon\" fill-opacity=\".90\"/>",
+"portrait oval 2": "<ellipse cx=\"620\" cy=\"590\" rx=\"50\" ry=\"60\" fill=\"lemonchiffon\" fill-opacity=\".90\"/>",
+
+"color": ["blue", "green", "yellow", "orange", "pink"],
+
+"set author": "[author:#_author#]",
+"_author": ["foxes", "andytuba"],
+"set title": "[#_title#]",
+"_title": [
+   "[line1:farmers'][line2:almanac]",
+   "[line1:farmers'][line2:almanac]",
+   "[line1:farmers'][line2:almanac]",
+   "[line1:the songbird][line2:flies free]",
+   "[line1:the songbird][line2:flies free]",
+   "[line1:undead][line2:songbirds]",
+   "[line1:undead][line2:songbirds]",
+   "[line1:as the rust][line2:settles]",
+   "[line1:virtual][line2:fajitas]",
+   "[line1:xeno exhi-][line2:bitionism]",
+   "[line1:as the crow][line2:shills]",
+   "[line1:undead][line2:songbirds]",
+   "[line1:as the rose][line2:blooms]",
+   "[line1:as the rose][line2:blooms]",
+   "[line1:songs of][line2:spring]",
+   "[line1:songs of][line2:spring]",
+   "[line1:songs of][line2:spring]"
+]
+}
