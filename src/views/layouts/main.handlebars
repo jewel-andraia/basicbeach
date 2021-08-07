@@ -52,19 +52,21 @@
 
 			content {
 				display: block;
-				font-family: serif;	
-				font-size: 1rem;
 				width: 80%;
-				white-space: pre-wrap;
 				border-left: 0.1em solid;
 				padding: 0.2em 0.3em;
+			}
+
+			section.txt {
+				font-family: serif;	
+				font-size: 1rem;
+				white-space: pre-wrap;
 			}
 
 			.images {
 				margin-top: 1em;
 			}
-			.images img,
-			.images svg {
+			.images > * + * {
 				margin-top: 1em;
 			}
 
