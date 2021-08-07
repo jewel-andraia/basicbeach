@@ -1,7 +1,8 @@
 {
     "_attribution": "https://twitter.com/franzanth/status/1423581180620722178?",
     "origin": [
-        "#all text#"
+        "#[#constants#]all text# {img https://pbs.twimg.com/media/E8GTWwaVgAowWAD?format=jpg&name=small}",
+        "#unicode# {img https://pbs.twimg.com/media/E8GTWwaVgAowWAD?format=jpg&name=small}"
     ],
     "origin todo": [
         "#svg cephalon###svg thorax##svg pydigium#"
@@ -23,7 +24,42 @@
     "pygidium": [
         "is the rear end of a trilobite.",
         "is also known as tail shield."
+    ],
+
+    "unicode": [
+        "#[#unicode constants#]_unicode#"
+    ],
+    "unicode constants": [
+        "[uc:#_unicode cephalon#][ut:#_unicode thorax#][up:#_unicode pygidium#][ue:#_unicode eye#]"
+    ],
+    "_unicode cephalon": [ "(", "\\{", "[" ],
+    "_unicode thorax": [ "|", "|", "|", "\\{", "\\{", "[", "[", "[" ],
+    "_unicode pygidium": [ ")", "}" ],
+    "_unicode eye": [ ":"],
+    "_unicode": [
+        "#unicode cephalon#"
+    ],
+    "unicode cephalon": [
+        "#uc##unicode cephalon#",
+        "#uc##unicode cephalon 2#"
+    ],
+    "unicode cephalon 2": [
+        "#uc##unicode cephalon 2#",
+        "#uc##unicode cephalon 3#",
+        "#ue##unicode cephalon 3#"
+    ],
+    "unicode cephalon 3": [
+        "#uc##unicode cephalon 3#",
+        "#uc##unicode thorax#"
+    ],
+    "unicode thorax": [
+        "#ut##unicode thorax#",
+        "#ut##unicode thorax#",
+        "#ut##unicode thorax#",
+        "#ut##unicode pygidium#"
+    ],
+    "unicode pygidium": [
+        "#up##unicode pygidium#",
+        "#up#"
     ]
-
-
 }
