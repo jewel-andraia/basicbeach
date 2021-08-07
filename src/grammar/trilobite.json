@@ -1,0 +1,29 @@
+{
+    "_attribution": "https://twitter.com/franzanth/status/1423581180620722178?",
+    "origin": [
+        "#all text#"
+    ],
+    "origin todo": [
+        "#svg cephalon###svg thorax##svg pydigium#"
+    ],
+    "all text": "CEPHALON\n#cephalon#\n\nTHORAX\n#thorax#\n\nPYGIDIUM\n#pygidium#",
+    "cephalon": [
+        "is the head of a trilobite.",
+        "The eyes are located on the back/upper side.",
+        "The mouth is located under the head shield"
+    ],
+    "thorax": [
+        "is the body section.",
+        "Divided into multiple plates.",
+        "The plates are called TERGITES.",
+        "The plates may vary in shape or count.",
+        "One important characteristic that differentiates one trilobite from another is its tergite/segment count.",
+        "A trilobite might have very few segments like Pagetides, or over 100 like Balcoraconia."
+    ],
+    "pygidium": [
+        "is the rear end of a trilobite.",
+        "is also known as tail shield."
+    ]
+
+
+}
