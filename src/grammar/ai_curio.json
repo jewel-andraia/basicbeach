@@ -1,11 +1,98 @@
 {
     "origin": "#[#setVars#]_origin#",
     "_origin": "#prefixes# #prompt_main# #infixes# #suffixes#",
-    
-    "setVars": "[prefixes:#_prefixes#][prompt_main:#_prompt main#][infixes:#_infixes#][suffixes:#_suffixes#]",
+    "setVars": [
+        "[prefixes:#_prefixes#][prompt_main:#_prompt_main#][infixes:#_infixes#][suffixes:#_suffixes#]",
+        "[prefixes:#__prefixes#][prompt_main:#__prompt_main#][infixes:#__infixes#][suffixes:#__suffixes#]"
+    ],
+    "_prefixes": [
+        "",
+        "",
+        "speedpaint of",
+        "photorealistic"
+    ],
+    "_prompt_main": [
+        "anime girl hellscape"
+    ],
+    "_infixes": [
+        "by james gurney",
+        "by thomas kinkade",
+        "by studio ghibli",
+        ""
+    ],
+    "_suffixes": [
+        "",
+        "",
+        "chiaroscuro",
+        "field of view"
+    ],
+    "__prefixes": "#artisms#",
+    "__prompt_main": [
+        "#passage# to #room#",
+        "#fabric# #room#",
+        "#gemstone# #room#",
+        "#metal# #packaging#",
+        "#metal# #object#",
+        "#gemstone# #object#",
+        "#fabric #object#"
+    ],
+    "__infixes": "#_infixes#",
+    "__suffixes": "#_suffixes#",
 
-    "_prefixes": ["", "", "speedpaint of", "photorealistic"],
-    "_prompt main": ["anime girl hellscape"],
-    "_infixes": ["by james gurney", "by thomas kinkade", "by studio ghibli", ""],
-    "_suffixes": ["", "", "chiaroscuro", "field of view"]
+    "artisms": {
+        "!::": "corpora",
+        "path": [
+            "art",
+            "isms"
+        ]
+    },
+    "passage": {
+        "!::": "corpora",
+        "path": [
+            "architecture",
+            "passages"
+        ]
+    },
+    "room": {
+        "!::": "corpora",
+        "path": [
+            "architecture",
+            "rooms"
+        ]
+    },
+    "fabric": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "fabrics"
+        ]
+    },
+    "gemstone": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "gemstones"
+        ]
+    },
+    "metal": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "metals"
+        ]
+    },
+    "packaging": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "packaging"
+        ]
+    },
+    "object": {
+        "!::": "corpora",
+        "path": [
+            "objects",
+            "objects"
+        ]
+    }
 }
