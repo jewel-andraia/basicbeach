@@ -1,0 +1,11 @@
+{
+    "origin": "#[#setVars#]_origin#",
+    "_origin": "#prefixes# #prompt_main# #infixes# #suffixes#",
+    
+    "setVars": "[prefixes:#_prefixes#][prompt_main:#_prompt main#][infixes:#_infixes#][suffixes:#_suffixes#]",
+
+    "_prefixes": ["", "", "speedpaint of", "photorealistic"],
+    "_prompt main": ["anime girl hellscape"],
+    "_infixes": ["by james gurney", "by thomas kinkade", "by studio ghibli", ""],
+    "_suffixes": ["", "", "chiaroscuro", "field of view"]
+}
