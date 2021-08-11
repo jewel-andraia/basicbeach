@@ -1,9 +1,16 @@
 {
     "_attribution": "https://twitter.com/ai_curio/status/1425331125287800834",
-    "origin": "#[#setVars#]_origin#",
+    "origin": [
+        "#[#classicVars#]_origin#",
+        "#[#newVars#]_origin#",
+        "#[#newVars#]_origin#",
+        "#[#newVars#]_origin#",
+        "#[#newVars#]_origin#",
+        "#[#newVars#]_origin#"
+    ],
     "_origin": "#prefixes# #prompt_main# #infixes# #suffixes#",
-    "setVars": [
-        "[prefixes:#_prefixes#][prompt_main:#_prompt_main#][infixes:#_infixes#][suffixes:#_suffixes#]",
+    "classicVars": "[prefixes:#_prefixes#][prompt_main:#_prompt_main#][infixes:#_infixes#][suffixes:#_suffixes#]",
+    "newVars": [
         "[prefixes:#__prefixes#][prompt_main:#__prompt_main#][infixes:#__infixes#][suffixes:#__suffixes#]"
     ],
     "_prefixes": [
