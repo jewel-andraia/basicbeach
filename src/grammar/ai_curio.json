@@ -30,13 +30,11 @@
     "__prefixes": "#artisms#",
     "__prompt_main": [
         "#passage# to #room#",
-        "#fabric# #room#",
-        "#gemstone# #room#",
-        "#metal# #packaging#",
-        "#metal# #object#",
-        "#gemstone# #object#",
-        "#fabric #object#"
+        "#material# #item#"
     ],
+    "material": ["#fabric#", "#gemstone#", "#metal#"],
+    "item": ["#room#", "#object#", "#packaging#", "#monster#", "malarkey"],
+
     "__infixes": "#_infixes#",
     "__suffixes": "#_suffixes#",
 
@@ -95,5 +93,14 @@
             "objects",
             "objects"
         ]
+    },
+    "monster": {
+        "!::": "corpora",
+        "path": ["mythology", "monsters", "names"]
+    },
+
+    "malarkey": {
+        "!::": "corpora",
+        "path": ["words", "strange words", "words"]
     }
 }
