@@ -1,0 +1,63 @@
+{
+    "origin": "#_origin.capitalizeAll#",
+    "_origin": ["#the# #old# #adjective# #creature#"],
+
+    "the": ["", "#_the#", "#_the#"],
+    "_the": ["", "the", "thee", "ye", "ye", "Þe", "þe"],
+    
+    "old": ["", "", "old", "olde", "auld", "aulde"],
+
+    "adjective": [
+        "#verbing# #color# #material# #_adjective#"
+    ],
+
+    "_adjective": [
+
+    ],
+
+    "color": ["", "#_color.!getColor#", "#material#"],
+    "_color": {
+        "!::": "corpora",
+        "path": ["colors", "crayola"]
+    },
+    "getColor": {
+        "!::": "jq",
+        "path": ".color"
+    },
+    "material": ["#fabric#", "#gemstone#", "#metal#"],
+    "fabric": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "fabrics"
+        ]
+    },
+    "gemstone": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "gemstones"
+        ]
+    },
+    "metal": {
+        "!::": "corpora",
+        "path": [
+            "materials",
+            "metals"
+        ]
+    },
+    "verbing": ["#infinitive.ing#"],
+    "infinitive": {
+        "!::": "corpora",
+        "path": [
+            "words",
+            "infinitive_verbs"
+        ]
+    },
+
+    "creature": {
+        "!::": "corpora",
+        "path": ["mythology", "monsters", "names"]
+    }
+    
+}
