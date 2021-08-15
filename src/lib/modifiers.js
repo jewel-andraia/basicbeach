@@ -1,5 +1,16 @@
 const emojiUnicode = require("emoji-unicode");
 
+const repeat = exports.repeat = function (s, [countString]) {
+	let count = parseInt(countString);
+	if (isNaN(count)) {
+		count = 1;
+	}
+
+	const result = new Array(count).fill(s).join('');
+	console.log({ count, countString, result });
+	return result;
+}
+
 const htmlEntity = exports.htmlEntity = function(s) {
 	return emojiUnicode(s).split(' ').map(u => `&\\#x${u};`).join('');
 };
@@ -58,6 +69,23 @@ const es = exports.es = function(s) {
 	} else {
 		return `${s}s`;
 	}
+}
+
+const no_es = exports.no_es = function(s) {
+	if (
+		s.toLowerCase().endsWith('series') ||
+		s.toLowerCase().endsWith('ces')
+	) {
+		return s;
+	}
+	if (s.toLowerCase().endsWith('movies')) {
+		return s.replace(/s$/, '');
+	}
+	if (s.toLowerCase().endsWith('ies')) {
+		return s.replace(/ies$/, 'y');
+	}
+
+	return s.replace(/e?s$/, '');
 }
 
 const lowercase = exports.lowercase = function(s) {
