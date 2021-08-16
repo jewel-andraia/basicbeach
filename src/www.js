@@ -1,21 +1,27 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const addTrailingSlash = require('connect-slashes');
-const nodescad = require('nodescad');
 const path = require('path');
 const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
 const url = require('url');
 
 const brackets = require('./lib/brackets');
-const { contextAwareModifierFactory, environmentFactory } = require('./lib/contextAwareModifiers');
 const handlebarsHelpers = require('./lib/handlebars-helpers');
 const projectTraceryModifiers = require('./lib/modifiers');
 const { loadFileNames } = require('./lib/utils');
 
+const { contextAwareModifierFactory, environmentFactory } = !(function() {
+   try {
+     return require('./lib/contextAwareModifiers');
+   } catch (e) {
+     console.error('Could not load contextAwareModifiers', e);
+     return {};
+   }
+})();
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = process.env.PORT || 3000;
 const rootPath = "/tracery/" 
 const grammarDir = path.join(__dirname, 'grammar');
 
@@ -31,7 +37,13 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views', 'src/views/');
 
-app.get('/tracery', function (req, res) {
+if (rootPath !== '/') {
+  app.get('/', function(req, res) {
+    res.set('location', rootPath);
+		res.status(301).send();
+  });
+}
+app.get(rootPath, function (req, res) {
 	loadFileNames(grammarDir).then(grammars => {
 		res.render('index', {
 			grammars,
@@ -40,7 +52,7 @@ app.get('/tracery', function (req, res) {
 	});
 });
 
-app.get('/tracery/random', function (req, res) {
+app.get(`${rootPath}random`, function (req, res) {
 	loadFileNames(grammarDir).then(grammars => {
 		const grammar = grammars[Math.floor(Math.random() * grammars.length)];
 		res.set('location', `/tracery/${grammar}/`);
@@ -48,7 +60,7 @@ app.get('/tracery/random', function (req, res) {
 	});
 });
 
-app.get('/tracery/:grammar', async function (req, res) {
+app.get(`${rootPath}grammar`, async function (req, res) {
 	const reqUrl = url.parse(req.url, true);
 	console.log({ reqUrl });
 	const grammar = req.params.grammar;
@@ -95,13 +107,16 @@ async function generateTraceryOutput(config) {
 		}
 	}
 
-	const caw = await contextAwareModifierFactory(grammarSource, environmentFactory(config));
-	grammarSource = caw.grammarSource;
+  let caw;
+  if (contextAwareModifierFactory) {
+    caw = await contextAwareModifierFactory(grammarSource, environmentFactory(config));
+  	grammarSource = caw.grammarSource;
+  }
 
 	const grammar = tracery.createGrammar(grammarSource);
 	grammar.addModifiers(tracery.baseEngModifiers);
 	grammar.addModifiers(projectTraceryModifiers);
-	grammar.addModifiers(caw.modifiers);
+  if (caw) { grammar.addModifiers(caw.modifiers); }
 
 	const origin = grammar.flatten('#origin#');
 	const text = brackets.removeBrackets(origin);
