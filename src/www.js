@@ -60,7 +60,7 @@ app.get(`${rootPath}random`, function (req, res) {
 	});
 });
 
-app.get(`${rootPath}grammar`, async function (req, res) {
+app.get(`${rootPath}:grammar`, async function (req, res) {
 	const reqUrl = url.parse(req.url, true);
 	console.log({ reqUrl });
 	const grammar = req.params.grammar;
