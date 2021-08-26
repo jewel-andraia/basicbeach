@@ -11,7 +11,7 @@ const handlebarsHelpers = require('./lib/handlebars-helpers');
 const projectTraceryModifiers = require('./lib/modifiers');
 const { loadFileNames } = require('./lib/utils');
 
-const { contextAwareModifierFactory, environmentFactory } = !(function() {
+const { contextAwareModifierFactory, environmentFactory } = (function() {
    try {
      return require('./lib/contextAwareModifiers');
    } catch (e) {
