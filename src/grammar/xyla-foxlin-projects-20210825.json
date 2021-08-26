@@ -1,0 +1,7 @@
+{
+  "origin": "The #gender# #verb# past the #colour# #abode#.",
+  "gender": ["boy", "girl", "enby"],
+  "verb": ["walked", "sauntered", "paraded"],
+  "colour": ["green", "blue", "yellow"],
+  "abode": ["house", "apartment", "tent"]  
+}
