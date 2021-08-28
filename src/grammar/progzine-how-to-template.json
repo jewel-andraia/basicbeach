@@ -1,0 +1,11 @@
+{  
+    "origin": "#FrontCover#\n\n\n#Page1#\n\n\n#Page2#\n\n\n...",
+    "FrontCover": "Cover page\n---\n\n\\🤖#How-To# Zine\n\nA WavelengthConf Progzine Template",
+    "Page1": "Page 1\n---\n\n🤖#How-To# \n\ndo a 🤖#thing# \n\nSO THAT YOU CAN\n\noutcome of doing the 🤖#thing#.",
+    "Page2": "Page 2\n---\n\nDescribe the 🤖#problem# this how-to solves\n\nWhat's the 🤖#PAIN# ???",
+
+    "How-To": ["How-To", "Guide", "Guidebook"],
+    "thing": ["thing", "task", "objective", "assignment"],
+    "problem": ["problem", "struggle", "issue", "sticky point"],
+    "PAIN": ["PAIN", "#problem#"]
+}
