@@ -1,11 +1,12 @@
 {  
-    "origin": "#FrontCover#\n\n\n#Page1#\n\n\n#Page2#\n\n\n...",
-    "FrontCover": "Cover page\n---\n\n🤖 #How-To# 🤖 Zine\n\nA _WavelengthConf_ Progzine Template",
-    "Page1": "Page 1\n---\n\n🤖 #How-To# 🤖\n\ndo a 🤖 #thing# 🤖\n\nSO THAT YOU CAN\n\noutcome of doing the 🤖 #thing# 🤖.",
-    "Page2": "Page 2\n---\n\nDescribe the 🤖 #problem# 🤖 this how-to solves\n\n`What's the 🤖 #PAIN# 🤖???`",
+    "_attribution": "http://goosap.us/progzine",
+    "origin": "#FrontCover# \n\n\n #Page1# \n\n\n #Page2# \n\n\n #Page3#",
+    "FrontCover": "Cover page \n---\n\n How-to \"Generate a How-To Zine\" Zine \n\n A WavelengthConf Progzine",
+    "Page1": "Page 1 \n---\n\n How-to \n\n write a 🤖#bot# \n that makes zines  \n\n  SO THAT YOU CAN \n\n make the 🤖#best# \n zine-ziner-zines",
+    "Page2": "Page 2 \n---\n\n I have many ideas on \n how to craft a zine, \n\n but struggle with picking \n the 🤖#best# phrasing.",
+    "Page3": "Page 3 \n---\n\n With a Tracery bot, \n I can generate \n many different 🤖#phrasings# \n and pick my 🤖#best# to draw!",
 
-    "How-To": ["How-To", "Guide", "Guidebook"],
-    "thing": ["thing", "task", "objective", "assignment"],
-    "problem": ["problem", "struggle", "issue", "sticky point"],
-    "PAIN": ["PAIN", "#problem#"]
+    "bot": ["bot", "script", "generator", "procedural generator"],
+    "best": ["best", "favorite", "fav", "preferred outcome"],
+    "phrasings": ["phrasing", "wording", "verbiage"]
 }
