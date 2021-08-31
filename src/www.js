@@ -74,7 +74,8 @@ app.get(`${rootPath}:grammar`, async function (req, res) {
 		});
 		console.debug({ ...traceryOutput });
 		res.render('grammar-output', {
-			...traceryOutput,
+			...traceryOutput[0],
+			traceryOutput,
 			body_classes: 'grammar',
 		});
 	} catch (e) {
@@ -96,13 +97,55 @@ async function generateTraceryOutput(config) {
 	if (config.seed) {
 		seedrandom(config.seed, { global: true });
 	}
+
+	const queuedConfigs = [config];
+	const results = [];
+	do {
+		const currentConfig  = queuedConfigs.shift();
+		const result = await _generateTraceryOutput(currentConfig);
+		if (result.output) {
+			results.push(result);
+			const usernameMentions = extractUsernameMentions(result.output.text)
+			console.debug({usernameMentions});
+			usernameMentions.forEach(username => {
+				if (username !== currentConfig.grammar && Math.random() > 0.05) { // prevent infinite loops
+				console.debug({username});
+					queuedConfigs.push({ 
+						...config,
+						seedText: result.output.text,
+						grammar: username,
+					});
+				}
+			});
+		}
+	} while (queuedConfigs.length);
+
+	return results;
+}
+
+function extractUsernameMentions(text) {
+	const re = new RegExp(/@([A-Za-z0-9_]+)/, 'g');
+	const results = text.match(re);
+	if (results) {
+		return results.map(x => x.slice(1));
+	}
+	return [];
+}
+
+async function _generateTraceryOutput(config) {
+
 	let grammarSource = {
 		origin: `No can do ${config.grammar}`,
 	};
 	try {
 		grammarSource = require(`./grammar/${config.grammar}.json`);
 	} catch (e) {
-		if (e.code !== 'MODULE_NOT_FOUND') {
+		if (e.code === 'MODULE_NOT_FOUND') {
+			return {
+				config,
+				output: false,
+			}
+		} else {
 			throw e;
 		}
 	}
@@ -113,12 +156,23 @@ async function generateTraceryOutput(config) {
   	grammarSource = caw.grammarSource;
   }
 
+
 	const grammar = tracery.createGrammar(grammarSource);
 	grammar.addModifiers(tracery.baseEngModifiers);
 	grammar.addModifiers(projectTraceryModifiers);
   if (caw) { grammar.addModifiers(caw.modifiers); }
 
-	const origin = grammar.flatten('#origin#');
+  	let originKey = 'origin';
+	if (config.seedText) {
+		for (key of Object.keys(grammarSource)) {
+			console.log({key})
+			if (new RegExp(key).test(config.seedText)) {
+				originKey = key;
+				break;
+			}
+		}
+	}
+	const origin = grammar.flatten(`#${originKey}#`);
 	const text = brackets.removeBrackets(origin);
 
 	const imageTags = brackets.matchBrackets(origin);

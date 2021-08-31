@@ -1,0 +1,19 @@
+{
+    "origin": [ "#names#"
+    ],
+    "names": [
+        "Hey @stooge1",
+        "Hey @stooge2",
+        "Hey @stooge3"
+    ],
+    "stooge1": [
+        "Did you say @stooge1? #names#, that's what he said!"
+    ],
+    "stooge2": [
+        "Did you say @stooge2? #names#, that's what he said!"
+    ],
+    "stooge3": [
+        "Did you say @stooge3? #names#, that's what he said!"
+    ],
+    ".*": "A wise guy, etc?"
+}
