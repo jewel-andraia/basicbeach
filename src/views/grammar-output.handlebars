@@ -4,19 +4,21 @@
     <a href="./" title="re-roll">&#x1f3b2;</a>
     <a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank" title="source">&#x26F2;</a>
 </nav>
+{{#traceryOutput}}
 <h1>
-    <a tabindex="1" href="./"><span class="text">{{deslug config.grammar}}</span></a>
+    <a tabindex="1" href="./"><span class="text">{{deslug this.config.grammar}}</span></a>
 </h1>
 <content id="body" tabindex="2">
-    <section class="txt">{{output.text}}</section>
-    {{#if output.images}}
+    <section class="txt">{{this.output.text}}</section>
+    {{#if this.output.images}}
         <section class="images">
-            {{#output.images}}
+            {{#this.output.images}}
                 {{{this}}}
-            {{/output.images}}
+            {{/this.output.images}}
         </section>
     {{/if}}
 </content>
+{{/traceryOutput}}
 <footer>
 {{#if output.attribution}}
 <p>inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
