@@ -1,0 +1,15 @@
+<nav>
+    <a href="https://github.com/andytuba/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank" title="source">&#x26F2;</a>
+</nav>
+<h1>
+    <a tabindex="1" href="./"><span class="text">{{deslug this.config.grammar}}<code>.json</code></code></span></a>
+    <button onClick="navigator.clipboard.writeText(document.querySelector('#body').textContent); alert('Copied to clipboard'); return void 0;">📋</button>
+</h1>
+<content id="body" tabindex="2">
+    <pre>
+{{this.grammarSource}}
+    </pre>
+</content>
+<a href="https://github.com/andytuba/basicbeach/" target="_blank">a tracery project</a> by <a href="https://twitter.com/andytuba" target="_blank">@andytuba</a>
+<p><a href="../">back to the index 📇</a></p>
+</footer>
