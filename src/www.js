@@ -125,7 +125,7 @@ async function generateTraceryOutput(config) {
 			const usernameMentions = extractUsernameMentions(result.output.text)
 			console.debug({usernameMentions});
 			usernameMentions.forEach(username => {
-				if (username !== currentConfig.grammar && Math.random() > 0.05) { // prevent infinite loops
+				if (username !== currentConfig.grammar && Math.random() > 0.35) { // prevent infinite loops
 				console.debug({username});
 					queuedConfigs.push({ 
 						...config,
@@ -135,7 +135,7 @@ async function generateTraceryOutput(config) {
 				}
 			});
 		}
-	} while (queuedConfigs.length);
+	} while (queuedConfigs.length && queuedConfigs.length < 15);
 
 	return results;
 }
