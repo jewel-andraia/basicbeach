@@ -60,6 +60,23 @@ app.get(`${rootPath}random`, function (req, res) {
 	});
 });
 
+app.get(`${rootPath}:grammar/source`, async function (req, res) {
+	const reqUrl = url.parse(req.url, true);
+	const grammar = req.params.grammar;
+	console.debug({ view: 'json', reqUrl, grammar });
+	const config = {
+		grammar,
+	}
+
+	const { grammarSource } = await _generateTraceryGrammarSource(config);
+
+	res.render('grammar-source', {
+		config,
+		grammarSource: JSON.stringify(grammarSource, null, 2),
+	});
+});
+
+
 app.get(`${rootPath}:grammar`, async function (req, res) {
 	const reqUrl = url.parse(req.url, true);
 	console.log({ reqUrl });
@@ -132,8 +149,7 @@ function extractUsernameMentions(text) {
 	return [];
 }
 
-async function _generateTraceryOutput(config) {
-
+async function _generateTraceryGrammarSource(config) {
 	let grammarSource = {
 		origin: `No can do ${config.grammar}`,
 	};
@@ -156,11 +172,17 @@ async function _generateTraceryOutput(config) {
   	grammarSource = caw.grammarSource;
   }
 
+  return { grammarSource, caw };
+}
+
+async function _generateTraceryOutput(config) {
+	const { grammarSource, caw } = await _generateTraceryGrammarSource(config);
+	console.log({ grammarSource });
 
 	const grammar = tracery.createGrammar(grammarSource);
 	grammar.addModifiers(tracery.baseEngModifiers);
 	grammar.addModifiers(projectTraceryModifiers);
-  if (caw) { grammar.addModifiers(caw.modifiers); }
+    if (caw) { grammar.addModifiers(caw.modifiers); }
 
   	let originKey = 'origin';
 	if (config.seedText) {
