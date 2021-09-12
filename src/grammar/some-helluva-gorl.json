@@ -1,0 +1,17 @@
+{
+	"origin": ["#frase#", "#frase# #frase#", "#frase# #frase# #frase#"],
+         "frase": ["She had #curves# in #places#.", "She was #nothing# #compared to# #other girls#.", "She was some helluva gorl."],
+    "nothing": ["nothing", "even more #stunning#", "through and through", "just the slightest bit"],
+    "stunning": ["stunning", "horrific", "imbued with a sense of #dread#", "exuding #dread#", "dripping #dread#", "self-possessed", "possessed", "possessed with a sense of #dread#"],
+   "dread": ["dread", "aplomb", "versimillitude", "naughtiness", "haughtiness", "sanctity", "dolor", "sanctimoniousness", "unctuousness", "smarminess", "snarkiness"],
+"compared to": [ "compared to", "than", "like", "beside", "next to", "surrounded by", "while fanning herself over", "smiling down at", "while commanding a horde of", "while presiding over"],
+    "other girls": ["other girls", "other demons", "others of her ilk", "humans", "cognizant creatures", "people"],
+	"curves": ["curves", "spoons", "a lil sumpin sumpin", "gnurls", "gnarls", "spiky pointed bits", "sparkles", "incoherencies", "impenetrable gazes", "inscrutable details", "marks of frustration"],
+	"places" : ["all the #right# places", "just the #right# place", "the #component# of her #body part#"],
+    "right": [ "right", "wrong", "green", "work-appropriate"],
+      "component": ["palm", "crook", "edge", "tip", "turn" ,"fiddly bit on the end", "surface", "depths"],
+     "body part": ["hand", "skin", "eye", "eyes", "foot"]
+}
+
+
+
