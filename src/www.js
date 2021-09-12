@@ -5,20 +5,14 @@ const path = require('path');
 const seedrandom = require('seedrandom');
 const tracery = require('tracery-grammar');
 const url = require('url');
+const traceryDataLoader = require('tracery-data-loader');
 
 const brackets = require('./lib/brackets');
 const handlebarsHelpers = require('./lib/handlebars-helpers');
 const projectTraceryModifiers = require('./lib/modifiers');
 const { loadFileNames } = require('./lib/utils');
 
-const { contextAwareModifierFactory, environmentFactory } = (function() {
-   try {
-     return require('./lib/contextAwareModifiers');
-   } catch (e) {
-     console.error('Could not load contextAwareModifiers', e);
-     return {};
-   }
-})();
+const { contextAwareModifierFactory, environmentFactory } = traceryDataLoader;
 
 const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;

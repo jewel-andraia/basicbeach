@@ -39,6 +39,7 @@
     "nodescad": "git+https://git@github.com/andytuba/nodescad.git#fix-D-quoting",
     "seedrandom": "^3.0.5",
     "static-server": "^2.2.1",
+    "tracery-data-loader": "0.0.3",
     "tracery-grammar": "^2.7.4",
     "yargs": "^15.4.0"
   },
