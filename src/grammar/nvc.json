@@ -1,0 +1,22 @@
+{
+	"_attribution": "https://twitter.com/KatCountiss/status/1480380265218252808",
+	"origin": [
+		"[context:#_context#]#observation# #feelings# #needs# #requests#",
+		"[context:#_context#]#observation# #feeling-need# #requests#",
+		"[context:#_context#]When #_contexted#, I felt #_feelings#, because I needed #_needs#"
+	],
+	"_context": [],
+	"observation": ["I noticed that #_contexting#.", "I see that _contexting#.", "I am hearing #_contexting#."],
+	"_contexting": ["you are doing some thing"],
+	"_contexted": ["you did some thing"],
+	"feeling-need": "I am feeling #_feelings# because I am needing #_needs#.",
+	"feelings": ["That makes me feel #_feelings#."],
+	"_feelings": {
+		"!::" :"corpora",
+		"path": ["games", "dark_souls_iii_messages", "words", "concepts"]
+	},
+	"needs": ["I need #_needs#"],
+	"_needs": ["some thing for myself"],
+	"requests": ["Would you be willing to #_requests#?"],
+	"_requests": ["do some thing"]
+}
