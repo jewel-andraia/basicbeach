@@ -1,0 +1,40 @@
+{
+	"origin": "You're telling me #lichen# turned these #people# into #wolves##questionmark#",
+		"_attribution": "https://twitter.com/MareNextDoor/status/15561645318546169858",
+
+		"lichen": ["lichen", "#yuck#", "#fabrics#", "#metals#", "#gemstones#"],
+		"yuck": {
+			"!::": "corpora",
+			"path": ["materials", "abridged-body-fluids", "abridged body fluids"]
+		},
+		"fabrics": {
+			"!::": "corpora",
+			"path": ["materials", "fabrics"]
+		},
+		"metals": {
+			"!::": "corpora",
+			"path": ["materials", "metals"]
+		},
+		"gemstone": {
+			"!::": "corpora",
+			"path": ["materials", "gemstones"]
+		},
+		"people": ["#_people#", "#_people#", "#moods# #people#", "#occupation#"],
+		"_people": ["people"],
+		"occupation": ["#_occupation.s#"],
+	  "_occupation": {
+			"!::": "corpora",
+			"path": ["humans", "occupations"]
+		},
+		"moods": {
+			"!::": "corpora",
+			"path": ["humans", "moods"]
+		},
+		"wolves": ["#_wolves#", "#_wolves#", "#moods# #_wolves#"],
+		"_wolves": ["#animals.s#"],
+		"animals": {
+			"!::": "corpora",
+			"path": ["animals", "common"]
+		},
+		"questionmark": ["#questionmark##questionmark#", "!", "?"]
+}
