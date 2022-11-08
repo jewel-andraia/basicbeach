@@ -1,0 +1,11 @@
+{
+	"origin": "I just want to #drink# #wine# and #pet# my #dog#.",
+	"drink": ["drink", "eat", "quaff", "slurp", "sip"],
+	"wine": ["wine", 	"beer", "whiskey", "vodka", "gin and tonics", "cocktails", "milk", "apple juice", "martinis"],
+	"pet": ["pet", "stroke", "caress"],
+	"dog": ["dog", "#_dog#"],
+	"_dog": {
+		"!::": "corpora",
+		"path": ["animals", "common"]
+	}
+} 	
