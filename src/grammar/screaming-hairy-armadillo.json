@@ -1,10 +1,26 @@
 {
 	"_attribution": "https://twitter.com/SaraBWarf/status/1608668031391272960",
-	"origin": "#In this jar#, #you'll see# #the# #dark-humored# #myopic# #human#.",
+	"origin":  ["#You see# #the human#.", "#You see# #the human#. #It's a thing#"],
+	"You see": ["#In this jar#, #you'll see#"],
+	"the human": ["#the# #dark-humored# #myopic# #human#", "#the# #dark-humored# #human#", "#the# #myopic# #human#"],
 	"In this jar": ["In this jar", "In this display", "Behind this leaf", "Within this container"],
 	"you'll see": ["you'll see", "you can find", "we observe", "we see", "we keep"],
 	"the": ["a", "the", "the most exquisite", "an exemplary", "a poorly-preserved", "a well-preserved"],
-	"dark-humored": ["dark-humored", "screaming"],
-	"myopic": ["myopic", "putrid", "hairy", "hirsute", "prickly"],
-	"human": ["human", "armadillo", "dog", "cat", "horse", "beast"]
+	"dark-humored": ["dark-humored", "screaming", "#corpora-humans-moods#", "#infinitive.ing#"],
+	"corpora-humans-moods": {
+			"!::": "corpora",
+			"path": ["humans", "moods"]
+	},
+	"myopic": ["myopic", "putrid", "hairy", "hirsute", "prickly", "pygmy"],
+	"human": ["human", "#corpora-animals-common#"],
+	"infinitive": {
+			"!::": "corpora",
+			"path": ["words", "infinitive_verbs"]
+	},
+	"corpora-animals-common": {
+			"!::": "corpora",
+			"path": ["animals", "common"]
+	},
+	"It's a thing": ["It is a #gender#.", "It may be #gender#.", "It is neither #gender# nor #gender#, but a third unknown thing."],
+  "gender": ["male", "female", "genderqueer", "gender-nonconforming", "tran", "trans woman", "trans man", "transfemme", "transmasc", "non-binary"]
 }
