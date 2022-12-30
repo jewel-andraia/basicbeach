@@ -2,7 +2,7 @@
     <small><a tabindex="-1" href="?seed={{config.seed}}" title="permalink" class="persistent">{{braille config.seed}}</a></small>
     <a href="?seed={{config.seed}}" title="permalink" class="persistent">&#x1f517;</a>
     <a href="./" title="re-roll">&#x1f3b2;</a>
-    <a href="https://github.com/jewel-andria/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank" title="source">&#x26F2;</a>
+    <a href="https://github.com/jewel-andraia/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank" title="source">&#x26F2;</a>
 </nav>
 {{#traceryOutput}}
 <h1>
@@ -20,9 +20,14 @@
 </content>
 {{/traceryOutput}}
 <footer>
+<p>want another? <a href="./">click me to &#x1f3b2; load a new version</a></p>
+<p>want something else? <a href="../">click me to 📇pick one from the index</a></p>
+<p>want to share this? &#x1f517; it's <a href="?seed={{config.seed}}" title="permalink">{{config.grammar}}#{{config.seed}}</a></p>
+
+
 {{#if output.attribution}}
-<p>inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
+<p>this generator was inspired by <a href="{{output.attribution}}" target="_blank">{{output.attribution}}</a></p>
 {{/if}}
-<a href="https://github.com/jewel-andraia/basicbeach/" target="_blank">a tracery project</a> by <a href="https://twitter.com/ALadyJewel" target="_blank">@ALadyJewel</a>
-<p><a href="../">back to the index 📇</a></p>
+<p>part of 
+<a href="https://github.com/jewel-andraia/basicbeach/blob/main/src/grammar/{{config.grammar}}.json" target="_blank">&#x26F2; a tracery project</a> by <a href="https://jewel.andraia.xyz" target="_blank">@ALadyJewel</a></p>
 </footer>
