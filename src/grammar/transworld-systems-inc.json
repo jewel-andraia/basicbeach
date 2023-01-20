@@ -1,0 +1,7 @@
+{
+  "origin": [ "#Trans##world# #Systems# #Inc#"],
+  "Trans": ["Trans", "Enby", "GNC", "NB", "Queer", "T", "T4T"],
+  "world": ["world", "city", "ton", "galaxy", "galactic", "stellar", "star"],
+  "Systems": ["", "", "Systems", "Team", "Org", "Organization", "Affiliate", "Conglomerate", "United"],
+  "Inc": ["Inc", "Incorporated", "LLC", "L.L.C."] 
+}
