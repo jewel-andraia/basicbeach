@@ -46,11 +46,19 @@ app.get(rootPath, function (req, res) {
 	});
 });
 
+
 app.get(`${rootPath}random`, function (req, res) {
 	loadFileNames(grammarDir).then(grammars => {
 		const grammar = grammars[Math.floor(Math.random() * grammars.length)];
 		res.set('location', `/tracery/${grammar}/`);
-		res.status(301).send();
+		res.status(302).send();
+	});
+});
+app.get(`${rootPath}json/random`, function (req, res) {
+	loadFileNames(grammarDir).then(grammars => {
+		const grammar = grammars[Math.floor(Math.random() * grammars.length)];
+		res.set('location', `/tracery/json/${grammar}/`);
+		res.status(302).send();
 	});
 });
 
@@ -68,6 +76,40 @@ app.get(`${rootPath}source/:grammar`, async function (req, res) {
 		config,
 		grammarSource: JSON.stringify(grammarSource, null, 2),
 	});
+});
+
+app.get(`${rootPath}json`, function (req, res) {
+	loadFileNames(grammarDir).then(grammars => {
+		res.json({
+			grammars,
+		});
+	});
+});
+
+
+app.get(`${rootPath}json/:grammar`, async function (req, res) {
+	const reqUrl = url.parse(req.url, true);
+	console.log({ reqUrl });
+	const grammar = req.params.grammar;
+	const seed = parseInt(reqUrl.query.seed, 10) || Math.floor(Math.random() * 999999999);
+
+	console.debug({ reqUrl, grammar });
+	try {
+		const traceryOutput = await generateTraceryOutput({
+			grammar: grammar || 't21-tracery-readme',
+			seed,
+		});
+		console.debug({ view: 'json', ...traceryOutput });
+		res.json(traceryOutput[0]);	
+	} catch (e) {
+		console.error(e);
+		// TODO: error
+		res.json({
+			grammar,
+			seed,
+			error: e.toString(),
+		});
+	}
 });
 
 
@@ -96,7 +138,6 @@ app.get(`${rootPath}:grammar`, async function (req, res) {
 			body_classes: 'grammar error',
 		});
 	}
-
 });
 
 
